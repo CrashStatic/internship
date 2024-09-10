@@ -4,18 +4,23 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Internship - стажировка за рубежом">
     <title>Internship</title>
+    <link rel="preload" href="fonts/manrope/Manrope-Regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/manrope/Manrope-Light.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/manrope/Manrope-Medium.woff2" type="font/woff2" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="sass/style.scss">
   </head>
 
-  <body class="page-body">
+  <body class="page">
     <!-- пример использования спрайта -->
-    <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
+    <!-- <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
     <svg>
       <use href="/__spritemap#sprite-user"></use>
-    </svg>
+    </svg> -->
     <!-- примеры требуемых атрибутов data-test="*" -->
-    <div data-test="hero">hero</div>
+
+    <!-- <div data-test="hero">hero</div>
     <div data-test="about">about</div>
     <div data-test="programs">programs</div>
     <div data-test="grant">grant</div>
@@ -24,7 +29,106 @@
     <div data-test="reviews">reviews</div>
     <div data-test="contacts">contacts</div>
     <div data-test="form">form</div>
-    <div data-test="footer">footer</div>
+    <div data-test="footer">footer</div> -->
+
+    <main class="page-main">
+      <h1 class="visually-hidden">Internship - стажировка за рубежом</h1>
+
+      <section class="hero" data-test="hero">
+        <h2 class="visually-hidden">Наши предложения</h2>
+        <header class="header container">
+          <div class="header__logo">
+            <img src="img/logo.svg" alt="Логотип сайта Internship" width="52" height="52">
+          </div>
+          <nav class="header__nav nav">
+            <button class="nav__button" type="button" aria-label="Открыть меню навигации">
+              <span>Меню</span>
+              <span class="nav__button-icon"></span>
+            </button>
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a class="nav__link" href="#about">О проекте</a>
+              </li>
+              <li class="nav__item">
+                <button class="nav__item-button" type="button">Программы</button>
+                <ul class="nav__submenu">
+                  <li class="nav__submenu-item">
+                    <a class="nav__submenu-link" href="#">Стажировки</a>
+                  </li>
+                  <li class="nav__submenu-item">
+                    <a class="nav__submenu-link" href="#">Волонтёрство</a>
+                  </li>
+                  <li class="nav__submenu-item">
+                    <a class="nav__submenu-link" href="#">Учёба</a>
+                  </li>
+                  <li class="nav__submenu-item">
+                    <a class="nav__submenu-link" href="#">Религия</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#grant">Как поехать</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#reviews">Отзывы</a>
+              </li>
+              <li class="nav__item">
+                <button class="nav__item-button" type="button">Новости</button>
+                <ul class="nav__submenu">
+                  <li class="nav__submenu-item">
+                    <a class="nav__submenu-link" href="#">Общее</a>
+                  </li>
+                  <li class="nav__submenu-item">
+                    <a class="nav__submenu-link" href="#">Волонтёрство</a>
+                  </li>
+                  <li class="nav__submenu-item">
+                    <a class="nav__submenu-link" href="#">Стажировки</a>
+                  </li>
+                  <li class="nav__submenu-item">
+                    <a class="nav__submenu-link" href="#">Карьера</a>
+                  </li>
+                  <li class="nav__submenu-item">
+                    <a class="nav__submenu-link" href="#">Путешествия</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#contacts">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <div class="hero__swiper swiper">
+          <div class="hero__wrapper swiper-wrapper">
+            <div class="hero__slide swiper-slide">
+              <div class="hero__container container">
+                <div class="hero__pagination swiper-pagination"></div>
+                <h3 class="hero__title">Глобальный профессиональный опыт обучения за&nbsp;рубежом</h3>
+                <p>Погрузитесь в&nbsp;академическую программу, проходя практику в&nbsp;разных городах, ощущая настоящий студенческий стиль жизни!</p>
+                <div class="hero__link-container">
+                  <a class="hero__link button" href="#">Подробнее</a>
+                </div>
+              </div>
+              <div class="hero__image">
+                <picture>
+                  <!-- <source media="(min-width: 1440px)" type="image/webp" srcset="img/hero/slide-caucasus-desktop.webp 1x, img/hero/slide-caucasus-desktop@2x.webp 2x" width="1440" height="800"> -->
+                  <!-- <source media="(min-width: 768px)" type="image/webp" srcset="img/hero/slide-caucasus-tablet.webp 1x, img/hero/slide-caucasus-tablet@2x.webp 2x" width="768" height="1034"> -->
+                  <source type="image/webp" srcset="img/hero/slide-training-mobile.webp 1x, img/hero/slide-training-mobile@2x.webp 2x" width="320" height="568">
+                  <!-- <source media="(min-width: 1440px)" type="image/jpg" srcset="img/hero/slide-caucasus-desktop.jpg 1x, img/hero/slide-caucasus-desktop@2x.jpg 2x" width="1440" height="800"> -->
+                  <!-- <source media="(min-width: 768px)" type="image/jpg" srcset="img/hero/slide-caucasus-tablet.jpg 1x, img/hero/slide-caucasus-tablet@2x.jpg 2x" width="768" height="1034"> -->
+                  <img src="img/hero/slide-training-mobile.jpg" srcset="img/hero/slide-training-mobile@2x.jpg 2x" width="320" height="568" alt="Девушка-студентка">
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="page-footer" id="footer" data-test="footer">gdfg</footer>
+
     <script type="module" src="js/main.js"></script>
   </body>
 

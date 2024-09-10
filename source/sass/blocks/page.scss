@@ -1,0 +1,10 @@
+.page {
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-main;
+  font-family: $main-font;
+  color: $color-dark;
+}
