@@ -1,6 +1,4 @@
 .nav {
-  // position: absolute;
-  // right: 15px;
   display: flex;
   flex-direction: column;
   transition: all $trans-default;
@@ -22,6 +20,7 @@
   justify-content: space-between;
   width: 100%;
   transition: all $trans-default;
+  cursor: pointer;
 
   &::after {
     content: "";
@@ -54,19 +53,10 @@
 
 .nav__list {
   overflow: auto;
-  // border: 1px solid $color-additional;
-  // border-radius: 16px;
-  // background-color: $color-additional;
-  // margin-top: 4px;
-}
-
-.nav__list--closed {
   height: 0;
   width: 0;
   opacity: 0;
   visibility: hidden;
-  padding: 0;
-  margin: 0;
   transition: width $trans-default, max-height $trans-default, opacity $trans-default, visibility $trans-default, margin-top $trans-default;
 }
 
@@ -76,6 +66,8 @@
   display: flex;
   flex-direction: column;
   width: 290px;
+  height: auto;
+  overflow: unset;
   padding: 35px 25px;
   background: $color-additional;
   border-radius: 16px;
@@ -85,32 +77,6 @@
   visibility: visible;
   transition: width $trans-default, opacity $trans-default, visibility $trans-default, margin-top $trans-default;
 }
-
-
-
-// .nav__list {
-//   display: none;
-// }
-
-// .nav__list--open {
-//   @include list;
-
-//   display: flex;
-//   // position: absolute;
-//   flex-direction: column;
-//   // left: 50%;
-//   // transform: translateX(-50%);
-//   width: 290px;
-//   padding: 35px 25px;
-//   background: $color-additional;
-//   border-radius: 16px;
-//   margin-top: 4px;
-//   gap: 28px;
-//   opacity: 1;
-//   visibility: visible;
-//   // transition: width $trans-default;
-//   transition: width $trans-default, opacity $trans-default, visibility $trans-default, margin-top $trans-default;
-// }
 
 .nav__link {
   font-size: 16px;
@@ -130,6 +96,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: transform $trans-default;
 
   &::after {
     content: "";
@@ -139,20 +106,37 @@
     background-image: url("/__spritemap#sprite-arrow-dropdown-view");
     background-repeat: no-repeat;
     transform: rotate(180deg);
+    transition: transform $trans-default;
+  }
+
+  &--active::after {
+    transform: rotate(0deg);
   }
 }
 
 .nav__submenu {
-  display: none;
-}
-
-.nav__submenu--open {
   @include list;
 
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding-left: 16px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height $trans-default, opacity $trans-default, visibility $trans-default;
+}
+
+.nav__submenu--active {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 1;
+  visibility: visible;
+  transition: max-height $trans-default, opacity $trans-default, visibility $trans-default;
+}
+
+.nav__submenu-item:first-child {
   margin-top: 20px;
 }
 

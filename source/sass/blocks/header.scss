@@ -5,31 +5,9 @@
   padding-top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  // width: 100%;
 }
 
 .header__logo {
   width: 52px;
   height: 52px;
-}
-
-
-
-.header__wrapper {
-  display: flex;
-  justify-content: space-between;
-  transition: margin-top $trans-default;
-}
-
-.header__button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  border: 1px solid $color-additional;
-  background-color: $color-white;
-  border-radius: 30px;
-  padding: 4px 4px 4px 15px;
-  transition: width $trans-default;
-  cursor: pointer;
 }
