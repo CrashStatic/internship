@@ -9,10 +9,13 @@
 @import "./global/visually-hidden";
 @import "./global/scroll-lock";
 @import "./global/container";
+@import "./global/mixins";
 
 /* BLOCKS */
 @import "./blocks/page";
 @import "./blocks/page-main";
 @import "./blocks/page-footer";
+@import "./blocks/hero";
 @import "./blocks/header";
 @import "./blocks/nav";
+@import "./blocks/button";
