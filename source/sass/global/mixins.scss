@@ -3,3 +3,14 @@
   margin: 0;
   list-style: none;
 }
+
+@mixin angle {
+  display: block;
+  width: 10px;
+  height: 10px;
+  mask-image: url("/__spritemap#sprite-angle-view");
+  mask-repeat: no-repeat;
+  mask-size: 10px 10px;
+  position: absolute;
+  background: $color-white;
+}

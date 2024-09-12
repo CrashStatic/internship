@@ -3,6 +3,7 @@ const menuList = document.querySelector('.nav__list');
 const bodyElement = document.querySelector('.page');
 const overlay = document.querySelector('.overlay');
 const submenuBtn = document.querySelectorAll('.nav__dropdown');
+const navLinks = document.querySelectorAll('[data-header="nav-link"]');
 
 const initMenu = () => {
   if (!menuBtn || !menuList || !bodyElement || !submenuBtn) {
@@ -33,6 +34,7 @@ const initMenu = () => {
     overlay.style.display = 'block';
   }
 
+  // Подменю
   submenuBtn.forEach((button) => {
     button.addEventListener('click', (e) => {
       e.preventDefault();
@@ -49,6 +51,11 @@ const initMenu = () => {
         button.classList.remove('nav__dropdown--active');
       }
     });
+  });
+
+  // Закрытие меню при переходе по ссылкам
+  navLinks.forEach((link) => {
+    link.addEventListener('click', closeMenu);
   });
 };
 

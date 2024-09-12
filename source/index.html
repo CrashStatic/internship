@@ -45,81 +45,128 @@
             <button class="nav__button" type="button" aria-label="Открыть меню навигации">Меню</button>
             <ul class="nav__list">
               <li class="nav__item">
-                <a class="nav__link" href="#about">О проекте</a>
+                <a class="nav__link" href="#about" data-header="nav-link">О проекте</a>
               </li>
               <li class="nav__item nav__item-dropdawn">
                 <button class="nav__link nav__dropdown" type="button">Программы</button>
                 <ul class="nav__submenu">
                   <li class="nav__submenu-item">
-                    <a class="nav__submenu-link" href="#">Стажировки</a>
+                    <a class="nav__submenu-link" href="#programs" data-header="nav-link">Стажировки</a>
                   </li>
                   <li class="nav__submenu-item">
-                    <a class="nav__submenu-link" href="#">Волонтёрство</a>
+                    <a class="nav__submenu-link" href="#programs" data-header="nav-link">Волонтёрство</a>
                   </li>
                   <li class="nav__submenu-item">
-                    <a class="nav__submenu-link" href="#">Учёба</a>
+                    <a class="nav__submenu-link" href="#programs" data-header="nav-link">Учёба</a>
                   </li>
                   <li class="nav__submenu-item">
-                    <a class="nav__submenu-link" href="#">Религия</a>
+                    <a class="nav__submenu-link" href="#programs" data-header="nav-link">Религия</a>
                   </li>
                 </ul>
               </li>
               <li class="nav__item">
-                <a class="nav__link" href="#grant">Как поехать</a>
+                <a class="nav__link" href="#grant" data-header="nav-link">Как поехать</a>
               </li>
               <li class="nav__item">
-                <a class="nav__link" href="#reviews">Отзывы</a>
+                <a class="nav__link" href="#reviews" data-header="nav-link">Отзывы</a>
               </li>
               <li class="nav__item nav__item-dropdawn">
                 <button class="nav__link nav__dropdown" type="button">Новости</button>
                 <ul class="nav__submenu">
                   <li class="nav__submenu-item">
-                    <a class="nav__submenu-link" href="#">Общее</a>
+                    <a class="nav__submenu-link" href="#news" data-header="nav-link">Общее</a>
                   </li>
                   <li class="nav__submenu-item">
-                    <a class="nav__submenu-link" href="#">Волонтёрство</a>
+                    <a class="nav__submenu-link" href="#news" data-header="nav-link">Волонтёрство</a>
                   </li>
                   <li class="nav__submenu-item">
-                    <a class="nav__submenu-link" href="#">Стажировки</a>
+                    <a class="nav__submenu-link" href="#news" data-header="nav-link">Стажировки</a>
                   </li>
                   <li class="nav__submenu-item">
-                    <a class="nav__submenu-link" href="#">Карьера</a>
+                    <a class="nav__submenu-link" href="#news" data-header="nav-link">Карьера</a>
                   </li>
                   <li class="nav__submenu-item">
-                    <a class="nav__submenu-link" href="#">Путешествия</a>
+                    <a class="nav__submenu-link" href="#news" data-header="nav-link">Путешествия</a>
                   </li>
                 </ul>
               </li>
               <li class="nav__item">
-                <a class="nav__link" href="#contacts">Контакты</a>
+                <a class="nav__link" href="#contacts" data-header="nav-link">Контакты</a>
               </li>
             </ul>
           </nav>
         </header>
 
         <div class="hero__swiper swiper">
-          <div class="hero__wrapper swiper-wrapper">
-            <div class="hero__slide swiper-slide">
+          <div class="hero__wrapper swiper-wrapper" tabindex="0">
+            <div class="hero__slide swiper-slide" tabindex="0">
               <div class="hero__image">
                 <picture>
-                  <!-- <source media="(min-width: 1440px)" type="image/webp" srcset="img/hero/slide-caucasus-desktop.webp 1x, img/hero/slide-caucasus-desktop@2x.webp 2x" width="1440" height="800"> -->
-                  <!-- <source media="(min-width: 768px)" type="image/webp" srcset="img/hero/slide-caucasus-tablet.webp 1x, img/hero/slide-caucasus-tablet@2x.webp 2x" width="768" height="1034"> -->
+                  <source media="(min-width: 1440px)" type="image/webp" srcset="img/hero/slide-training-desktop.webp 1x, img/hero/slide-training-desktop@2x.webp 2x" width="1440" height="800">
+                  <source media="(min-width: 768px)" type="image/webp" srcset="img/hero/slide-training-tablet.webp 1x, img/hero/slide-training-tablet@2x.webp 2x" width="768" height="1024">
                   <source type="image/webp" srcset="img/hero/slide-training-mobile.webp 1x, img/hero/slide-training-mobile@2x.webp 2x" width="320" height="568">
-                  <!-- <source media="(min-width: 1440px)" type="image/jpg" srcset="img/hero/slide-caucasus-desktop.jpg 1x, img/hero/slide-caucasus-desktop@2x.jpg 2x" width="1440" height="800"> -->
-                  <!-- <source media="(min-width: 768px)" type="image/jpg" srcset="img/hero/slide-caucasus-tablet.jpg 1x, img/hero/slide-caucasus-tablet@2x.jpg 2x" width="768" height="1034"> -->
+                  <source media="(min-width: 1440px)" type="image/jpg" srcset="img/hero/slide-training-desktop.jpg 1x, img/hero/slide-training-desktop@2x.jpg 2x" width="1440" height="800">
+                  <source media="(min-width: 768px)" type="image/jpg" srcset="img/hero/slide-training-tablet.jpg 1x, img/hero/slide-training-tablet@2x.jpg 2x" width="768" height="1024">
                   <img src="img/hero/slide-training-mobile.jpg" srcset="img/hero/slide-training-mobile@2x.jpg 2x" width="320" height="568" alt="Девушка-студентка">
                 </picture>
               </div>
               <div class="hero__container container">
-                <div class="hero__pagination swiper-pagination"></div>
+                <div class="hero__pagination"></div>
                 <h3 class="hero__title">Глобальный профессиональный опыт обучения за&nbsp;рубежом</h3>
-                <p>Погрузитесь в&nbsp;академическую программу, проходя практику в&nbsp;разных городах, ощущая настоящий студенческий стиль жизни!</p>
-                <div class="hero__link-container">
-                  <a class="hero__link button" href="#">Подробнее</a>
+                <div class="hero__description">
+                  <p>Погрузитесь в&nbsp;академическую программу, проходя практику в&nbsp;разных городах, ощущая настоящий студенческий стиль жизни!</p>
+                  <div class="hero__link-container">
+                    <a class="hero__link button" href="#">Подробнее</a>
+                  </div>
                 </div>
               </div>
             </div>
 
+            <div class="hero__slide swiper-slide" tabindex="0">
+              <div class="hero__image">
+                <picture>
+                  <source media="(min-width: 1440px)" type="image/webp" srcset="img/hero/slide-volunteering-desktop.webp 1x, img/hero/slide-volunteering-desktop@2x.webp 2x" width="1440" height="800">
+                  <source media="(min-width: 768px)" type="image/webp" srcset="img/hero/slide-volunteering-tablet.webp 1x, img/hero/slide-volunteering-tablet@2x.webp 2x" width="768" height="1024">
+                  <source type="image/webp" srcset="img/hero/slide-volunteering-mobile.webp 1x, img/hero/slide-volunteering-mobile@2x.webp 2x" width="320" height="568">
+                  <source media="(min-width: 1440px)" type="image/jpg" srcset="img/hero/slide-volunteering-desktop.jpg 1x, img/hero/slide-volunteering-desktop@2x.jpg 2x" width="1440" height="800">
+                  <source media="(min-width: 768px)" type="image/jpg" srcset="img/hero/slide-volunteering-tablet.jpg 1x, img/hero/slide-volunteering-tablet@2x.jpg 2x" width="768" height="1024">
+                  <img src="img/hero/slide-volunteering-mobile.jpg" srcset="img/hero/slide-volunteering-mobile@2x.jpg 2x" width="320" height="568" alt="Девушка-студентка">
+                </picture>
+              </div>
+              <div class="hero__container container">
+                <div class="hero__pagination"></div>
+                <h3 class="hero__title">Волонтёрские программы&nbsp;&mdash; внесите свой вклад в&nbsp;общество</h3>
+                <div class="hero__description">
+                  <p>Возможности для преподавания, органического сельского хозяйства, устойчивого образа жизни и&nbsp;другое.</p>
+                  <div class="hero__link-container">
+                    <a class="hero__link button" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero__slide swiper-slide" tabindex="0">
+              <div class="hero__image">
+                <picture>
+                  <source media="(min-width: 1440px)" type="image/webp" srcset="img/hero/slide-internship-desktop.webp 1x, img/hero/slide-internship-desktop@2x.webp 2x" width="1440" height="800">
+                  <source media="(min-width: 768px)" type="image/webp" srcset="img/hero/slide-internship-tablet.webp 1x, img/hero/slide-internship-tablet@2x.webp 2x" width="768" height="1024">
+                  <source type="image/webp" srcset="img/hero/slide-internship-mobile.webp 1x, img/hero/slide-internship-mobile@2x.webp 2x" width="320" height="568">
+                  <source media="(min-width: 1440px)" type="image/jpg" srcset="img/hero/slide-internship-desktop.jpg 1x, img/hero/slide-internship-desktop@2x.jpg 2x" width="1440" height="800">
+                  <source media="(min-width: 768px)" type="image/jpg" srcset="img/hero/slide-internship-tablet.jpg 1x, img/hero/slide-internship-tablet@2x.jpg 2x" width="768" height="1024">
+                  <img src="img/hero/slide-internship-mobile.jpg" srcset="img/hero/slide-internship-mobile@2x.jpg 2x" width="320" height="568" alt="Девушка-студентка">
+                </picture>
+              </div>
+              <div class="hero__container container">
+                <div class="hero__pagination"></div>
+                <h3 class="hero__title">Программы стажировок в&nbsp;крупнейших компаниях мира</h3>
+                <div class="hero__description">
+                  <p>Получите незаменимый опыт работы в&nbsp;ведущих мировых компаниях и&nbsp;государственных организациях.</p>
+                  <div class="hero__link-container">
+                    <a class="hero__link button" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
