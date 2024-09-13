@@ -1,5 +1,6 @@
 .hero__swiper .hero__slide {
   width: 100%;
+  height: auto;
   min-height: 568px;
   position: relative;
   display: flex;
@@ -10,16 +11,13 @@
   //   outline: none;
   // }
 
-  // @media (min-width: $tablet-width) {
-  //   padding-top: 242px;
-  //   padding-bottom: 357px;
-  // }
+  @media (min-width: $tablet-width) {
+    min-height: 1024px;
+  }
 
-  // @media (min-width: $desktop-width) {
-  //   width: 1200px;
-  //   padding-top: 101px;
-  //   padding-bottom: 80px;
-  // }
+  @media (min-width: $desktop-width) {
+    min-height: 800px;
+  }
 }
 
 .hero__image {
@@ -50,8 +48,11 @@
 
 .hero__container {
   z-index: 2;
-  margin-bottom: 20px;
-  padding-top: 80px;
+  margin: 80px auto 20px;
+
+  @media (min-width: $tablet-width) {
+    margin: 90px auto 60px;
+  }
 }
 
 .hero .hero__pagination {
@@ -74,10 +75,17 @@
     bottom: 0;
   }
 
-  // @media (min-width: $tablet-width) {
-  //   --swiper-pagination-bullet-width: 20px;
-  //   --swiper-pagination-bullet-height: 20px;
-  // }
+  @media (min-width: $tablet-width) {
+    padding: 14px 20px;
+    border-radius: 20px 20px 0 0;
+
+    &::after {
+      width: 20px;
+      height: 20px;
+      mask-size: 20px 20px;
+      right: -20px;
+    }
+  }
 
   // @media (min-width: $desktop-width) {
   //   display: flex;
@@ -106,6 +114,11 @@
     background-color: $color-additional;
   }
 
+  @media (min-width: $tablet-width) {
+    width: 12px;
+    height: 12px;
+  }
+
   // @include hover {
   //   border-color: $color-primary-darker;
   //   outline: none;
@@ -127,6 +140,63 @@
   // }
 }
 
+
+// .hero .swiper-pagination {
+//   position: initial;
+//   background-color: $color-white;
+//   display: flex;
+//   gap: 12px;
+//   justify-content: center;
+//   align-items: center;
+//   width: 94px;
+//   height: 38px;
+//   border-radius: 20px 20px 0 0;
+
+//   &::after {
+//     position: absolute;
+//     content: "";
+//     width: 20px;
+//     height: 20px;
+//     right: -20px;
+//     bottom: 0;
+//     background-image: url("../img/hero-block/back/angle-sm.png");
+//     background-repeat: no-repeat;
+//   }
+
+//   // @include vp-767 {
+//   //   border-radius: 12px 12px 0 0;
+//   //   width: 80px;
+//   //   height: 28px;
+
+//   //   &::after {
+//   //     height: 10px;
+//   //     right: -10px;
+//   //     width: 10px;
+//   //     background-image: url("../img/hero-block/back/angle-sm-mb.png");
+//   //   }
+//   // }
+// }
+
+// .hero .swiper-pagination-bullet {
+//   margin: 0;
+//   width: 10px;
+//   height: 10px;
+//   border: 1px $color-additional solid;
+//   border-radius: 50%;
+//   background-color: transparent;
+//   opacity: 1;
+
+//   // @include vp-767 {
+//   //   width: 8px;
+//   //   height: 8px;
+//   // }
+// }
+
+// .hero .swiper-pagination-bullet-active {
+//   background-color: $color-additional;
+// }
+
+
 .hero__title {
   font-size: 22px;
   line-height: 26px;
@@ -136,11 +206,55 @@
   background: $color-white;
   padding: 20px 14px 16px;
   border-radius: 0 16px 16px 0;
+
+  @media (min-width: $tablet-width) {
+    max-width: 659px;
+    font-size: 36px;
+    line-height: 44px;
+    padding: 31px 40px 23px;
+    border-radius: 0 30px 30px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 968px;
+    font-size: 54px;
+    line-height: 62px;
+    padding: 40px 50px 30px;
+  }
+}
+
+.hero__description {
+  @media (min-width: $tablet-width) {
+    display: flex;
+    padding: 0 40px 35px;
+    border-radius: 0 0 30px 30px;
+    background: $color-white;
+    gap: 30px;
+    width: 593px;
+    position: relative;
+
+    &::after {
+      @include angle;
+
+      content: "";
+      width: 26px;
+      height: 26px;
+      mask-size: 26px 26px;
+      right: -26px;
+      top: 0;
+      transform: rotateX(180deg);
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 775px;
+    padding: 0 50px 35px;
+  }
 }
 
 .hero__description p {
   font-size: 16px;
-  width: 91%;
+  width: 92%;
   margin: 0;
   background: $color-white;
   padding: 0 14px 15px;
@@ -158,14 +272,27 @@
     top: -1px;
     transform: rotateX(180deg);
   }
+
+  @media (min-width: $tablet-width) {
+    padding: unset;
+    border-radius: unset;
+    width: 285px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 446px;
+    line-height: 26px;
+  }
 }
 
 .hero__link-container {
   background: $color-white;
   border-radius: 0 0 14px 14px;
   padding: 10px 15px;
-  width: max-content;
-
   position: relative;
 
   &::after {
@@ -175,5 +302,22 @@
     right: -10px;
     top: 0;
     transform: rotateX(180deg);
+  }
+
+  @media (max-width: $mobile-width) {
+    max-width: 184px;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: unset;
+    border-radius: unset;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 10px;
   }
 }

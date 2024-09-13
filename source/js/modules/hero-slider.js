@@ -3,8 +3,8 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 // import 'swiper/css/pagination';
 
-const swiperContainer = document.querySelector('.swiper-wrapper');
-const swiperLinks = swiperContainer.querySelectorAll('a[href]');
+// const swiperContainer = document.querySelector('.swiper-wrapper');
+// const swiperLinks = swiperContainer.querySelectorAll('a[href]');
 
 const initSwiperHero = () => {
   const swiper = new Swiper('.hero__swiper', {
@@ -12,12 +12,18 @@ const initSwiperHero = () => {
 
     // If we need pagination
     pagination: {
-      el: '.swiper-slide-active .hero__pagination',
+      el: '.swiper-slide-active .swiper-pagination',
       type: 'bullets',
       bulletClass: 'hero__pagination-bullet',
       bulletActiveClass: 'hero__pagination-bullet--active',
       clickable: true,
     },
+
+    // pagination: {
+    //   el: '.swiper-pagination',
+    //   type: 'bullets',
+    //   clickable: true,
+    // },
 
     // keyboard: {
     //   enabled: true,
@@ -25,10 +31,9 @@ const initSwiperHero = () => {
     // },
 
     keyboard: true,
-    focusableElements: 'a, button',
+    // focusableElements: 'a, button',
 
     loop: true,
-    autoHeight: true,
 
     // Default parameters
     slidesPerView: 1,
@@ -52,22 +57,32 @@ const initSwiperHero = () => {
     }
   });
 
-  // Запрещает Tab по неактивным слайдам
-  function setTabIndex() {
-    swiper.slides[swiper.activeIndex].querySelector('a').setAttribute('tabindex', '0');
-  }
+  // swiper.params.pagination
 
-  for (const link of swiperLinks) {
-    link.setAttribute('tabindex', '-1');
-    setTabIndex();
-  }
+  const heroLinks = document.querySelectorAll('.hero__link');
 
-  swiper.on('activeIndexChange', () => {
-    for (const link of swiperLinks) {
-      link.setAttribute('tabindex', '-1');
-    }
-    setTabIndex();
+  heroLinks.forEach((link, index) => {
+    link.addEventListener('focus', () => {
+      swiper.slideTo(index);
+    });
   });
+
+  // Запрещает Tab по неактивным слайдам
+  // function setTabIndex() {
+  //   swiper.slides[swiper.activeIndex].querySelector('a').setAttribute('tabindex', '0');
+  // }
+
+  // for (const link of swiperLinks) {
+  //   link.setAttribute('tabindex', '-1');
+  //   setTabIndex();
+  // }
+
+  // swiper.on('activeIndexChange', () => {
+  //   for (const link of swiperLinks) {
+  //     link.setAttribute('tabindex', '-1');
+  //   }
+  //   setTabIndex();
+  // });
 
   // swiper.enable();
 

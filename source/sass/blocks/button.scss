@@ -1,9 +1,8 @@
 .button {
   display: flex;
-  max-width: max-content;
   align-items: center;
   gap: 20px;
-  padding: 4px 4px 4px 21px;
+  padding: 4px 4px 4px 20px;
   border-radius: 30px;
   border: 1px solid $color-additional;
   color: $color-additional;
@@ -17,7 +16,7 @@
 
   &::after {
     content: "";
-    display: block;
+    display: flex;
     width: 34px;
     height: 34px;
     background: $color-additional;
@@ -26,5 +25,22 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 10px 10px;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: $tablet-width) {
+    gap: 30px;
+    padding: 4px 4px 4px 30px;
+    font-size: 14px;
+    line-height: 14px;
+
+    &::after {
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 5px 5px 5px 30px;
   }
 }

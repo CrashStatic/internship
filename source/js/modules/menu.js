@@ -1,3 +1,4 @@
+const header = document.querySelector('.header');
 const menuBtn = document.querySelector('.nav__button');
 const menuList = document.querySelector('.nav__list');
 const bodyElement = document.querySelector('.page');
@@ -24,6 +25,7 @@ const initMenu = () => {
     menuList.classList.remove('nav__list--opened');
     bodyElement.classList.remove('scroll-lock');
     menuBtn.classList.remove('nav__button--open');
+    header.classList.remove('header--opened');
     overlay.style.display = 'none';
   }
 
@@ -31,6 +33,7 @@ const initMenu = () => {
     menuList.classList.add('nav__list--opened');
     bodyElement.classList.add('scroll-lock');
     menuBtn.classList.add('nav__button--open');
+    header.classList.add('header--opened');
     overlay.style.display = 'block';
   }
 
