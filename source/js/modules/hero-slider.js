@@ -35,6 +35,7 @@ const initSwiperHero = () => {
 
     loop: true,
 
+
     // Default parameters
     slidesPerView: 1,
     spaceBetween: 40,

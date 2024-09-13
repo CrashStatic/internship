@@ -20,7 +20,6 @@
     </svg> -->
     <!-- примеры требуемых атрибутов data-test="*" -->
 
-    <!-- <div data-test="about">about</div> -->
     <!-- <div data-test="programs">programs</div> -->
     <!-- <div data-test="grant">grant</div> -->
     <!-- <div data-test="news">news</div> -->
@@ -206,9 +205,47 @@
         </div>
       </section>
 
+
+
     </main>
 
     <footer class="page-footer" id="footer" data-test="footer">gdfg</footer>
+
+    <div class="modal">
+      <div class="modal__overlay"></div>
+      <div class="modal__container">
+        <button class="modal__close-button" type="button">
+          <span class="visually-hidden">Закртыть модальное окно</span>
+        </button>
+        <h2 class="modal__title">Напишите нам</h2>
+        <p class="modal__description">Оставьте ваши контакты, если у&nbsp;вас остались вопросы&nbsp;&mdash; мы&nbsp;на&nbsp;них ответим!</p>
+        <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
+          <div class="form__item">
+            <label class="form__label" for="name">Имя</label>
+            <input class="form__input" type="text" name="name" id="name" autocomplete="on" required>
+          </div>
+          <div class="form__item">
+            <label class="form__label" for="phone">Телефон</label>
+            <input class="form__input form__input--phone" type="text" name="phone" id="phone" autocomplete="on" required>
+          </div>
+          <div class="form__item">
+            <label class="form__label" for="place">Выберите город</label>
+            <select class="form__select" id="place" name="place" size="1" required>
+              <option value=""></option>
+              <option value="st-petersburg">Санкт-Петербург</option>
+              <option value="moscow">Москва</option>
+              <option value="krasnodar">Краснодар</option>
+              <option value="ekaterinburg">Екатеринбург</option>
+            </select>
+          </div>
+          <div class="form__checkbox">
+            <input class="form__checkbox-input" type="checkbox" name="agree" id="agree" required>
+            <label class="form__checkbox-label" for="agree">Я согласен на обработку моих персональных данных</label>
+          </div>
+          <button class="form__button button button--primary" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
 
     <script type="module" src="js/main.js"></script>
   </body>
