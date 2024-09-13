@@ -4,28 +4,54 @@
   gap: 20px;
   padding: 4px 4px 4px 20px;
   border-radius: 30px;
-  border: 1px solid $color-additional;
-  color: $color-additional;
   text-decoration: none;
   font-weight: 500;
   font-size: 12px;
   line-height: 12px;
   letter-spacing: 0.24px;
-  background: transparent;
+  background-color: transparent;
   text-transform: uppercase;
+  transition: all $trans-default;
 
   &::after {
     content: "";
     display: flex;
     width: 34px;
     height: 34px;
-    background: $color-additional;
     border-radius: 50%;
-    background-image: url("/__spritemap#sprite-arrow-view");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 10px 10px;
     flex-shrink: 0;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    mask-image: url("/__spritemap#sprite-arrow-view");
+    mask-size: 10px 10px;
+    mask-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  &:disabled,
+  &--disabled {
+    border: 1px solid $color-disabled;
+    background-color: transparent;
+    color: $color-disabled;
+    pointer-events: none;
+
+    &::before {
+      mask-image: url("/__spritemap#sprite-arrow-view");
+      background-color: $color-white;
+    }
+
+    &::after {
+      background-color: $color-disabled;
+    }
   }
 
   @media (min-width: $tablet-width) {
@@ -38,9 +64,73 @@
       width: 46px;
       height: 46px;
     }
+
+    &::before {
+      right: 22px;
+    }
   }
 
   @media (min-width: $desktop-width) {
     padding: 5px 5px 5px 30px;
+  }
+}
+
+.button--primary {
+  border: 1px solid $color-additional;
+  color: $color-additional;
+
+  &::after {
+    background-color: $color-additional;
+  }
+
+  &::before {
+    background-color: $color-white;
+  }
+
+  &:hover {
+    background-color: $color-additional;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-white;
+    }
+
+    &::before {
+      background-color: $color-additional;
+      transform: rotate(45deg);
+      top: unset;
+    }
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible {
+    background-color: transparent;
+    color: $color-additional;
+
+    &::after {
+      background-color: $color-additional;
+    }
+
+    &::before {
+      background-color: $color-white;
+    }
+  }
+
+  &:active {
+    background-color: $color-additional;
+    color: hsla(0, 0%, 100%, 0.7);
+
+    &::after {
+      background-color: $color-white;
+    }
+
+    &::before {
+      background-color: $color-additional;
+      opacity: 0.7;
+    }
   }
 }

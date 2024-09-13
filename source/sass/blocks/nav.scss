@@ -23,19 +23,94 @@
   max-width: 200px;
   transition: all $trans-default;
   cursor: pointer;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 8px;
+    background-color: $color-white;
+    mask-image: url("/__spritemap#sprite-burger-view");
+    mask-size: 16px 8px;
+    mask-repeat: no-repeat;
+    position: absolute;
+    flex-shrink: 0;
+    top: 50%;
+    right: 19px;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
 
   &::after {
     content: "";
-    display: block;
+    display: flex;
     width: 46px;
     height: 46px;
-    background: $color-additional;
     border-radius: 50%;
-    background-image: url("/__spritemap#sprite-burger-view");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 16px 8px;
     flex-shrink: 0;
+    background-color: $color-additional;
+  }
+
+  &:hover {
+    background-color: $color-additional;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-white;
+    }
+
+    &::before {
+      background-color: $color-additional;
+    }
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible {
+    background-color: transparent;
+    color: $color-additional;
+
+    &::after {
+      background-color: $color-additional;
+    }
+
+    &::before {
+      background-color: $color-white;
+    }
+  }
+
+  &:active {
+    background-color: $color-additional;
+    color: hsla(0, 0%, 100%, 0.7);
+
+    &::after {
+      background-color: $color-white;
+    }
+
+    &::before {
+      background-color: $color-additional;
+      opacity: 0.7;
+    }
+  }
+
+  &:disabled,
+  &--disabled {
+    border: 1px solid $color-disabled;
+    background-color: transparent;
+    color: $color-disabled;
+    pointer-events: none;
+
+    &::before {
+      background-color: $color-white;
+    }
+
+    &::after {
+      background-color: $color-disabled;
+    }
   }
 
   @media (min-width: $tablet-width) {
@@ -52,12 +127,65 @@
   max-width: unset;
 
   &::after {
-    background: $color-white;
-    background-image: url("/__spritemap#sprite-cross-view");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20px 20px;
+    background-color: $color-white;
     flex-shrink: 0;
+  }
+
+  &::before {
+    width: 20px;
+    height:20px;
+    background-color: $color-additional;
+    mask-image: url("/__spritemap#sprite-cross-view");
+    mask-size: 20px 20px;
+    flex-shrink: 0;
+    right: 16px;
+  }
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-additional;
+
+    &::after {
+      background-color: $color-additional;
+    }
+
+    &::before {
+      background-color: $color-white;
+    }
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible {
+    background-color: transparent;
+    color: $color-white;
+    border: 1px solid $color-white;
+
+    &::after {
+      background-color: $color-white;
+    }
+
+    &::before {
+      background-color: $color-additional;
+    }
+  }
+
+  &:active {
+    background-color: $color-white;
+    color: hsla(215, 60%, 48%, 0.7);
+    border: 1px solid $color-white;
+
+    &::after {
+      background-color: $color-additional;
+    }
+
+    &::before {
+      background-color: $color-white;
+      opacity: 0.7;
+    }
   }
 
   @media (min-width: $tablet-width) {
@@ -71,7 +199,7 @@
   width: 0;
   opacity: 0;
   visibility: hidden;
-  transition: width $trans-default, max-height $trans-default, opacity $trans-default, visibility $trans-default, margin-top $trans-default;
+  transition: all $trans-default;
 }
 
 .nav__list--opened {
@@ -90,7 +218,6 @@
   gap: 21px;
   opacity: 1;
   visibility: visible;
-  transition: width $trans-default, opacity $trans-default, visibility $trans-default, margin-top $trans-default;
 
   @media (min-width: $tablet-width) {
     width: 286px;
@@ -108,10 +235,7 @@
 }
 
 .nav__dropdown {
-  background: none;
-  border: none;
   cursor: pointer;
-  padding: 0;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -127,9 +251,14 @@
     transform: rotate(180deg);
     transition: transform $trans-default;
   }
+}
 
-  &--active::after {
+.nav__dropdown--active {
+  opacity: 1;
+
+  &::after {
     transform: rotate(0deg);
+    opacity: 1;
   }
 }
 
@@ -165,4 +294,18 @@
   text-decoration: none;
   color: $color-white;
   opacity: 0.7;
+}
+
+.nav__link,
+.nav__submenu-link {
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    opacity: 1;
+  }
 }

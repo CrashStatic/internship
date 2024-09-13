@@ -43,12 +43,12 @@
           </div>
           <nav class="header__nav nav">
             <button class="nav__button" type="button" aria-label="Открыть меню навигации">Меню</button>
-            <ul class="nav__list">
+            <ul class="nav__list" aria-hidden="true">
               <li class="nav__item">
                 <a class="nav__link" href="#about" data-header="nav-link">О проекте</a>
               </li>
               <li class="nav__item nav__item-dropdawn">
-                <button class="nav__link nav__dropdown" type="button">Программы</button>
+                <a class="nav__link nav__dropdown" href="#">Программы</a>
                 <ul class="nav__submenu">
                   <li class="nav__submenu-item">
                     <a class="nav__submenu-link" href="#programs" data-header="nav-link">Стажировки</a>
@@ -71,7 +71,7 @@
                 <a class="nav__link" href="#reviews" data-header="nav-link">Отзывы</a>
               </li>
               <li class="nav__item nav__item-dropdawn">
-                <button class="nav__link nav__dropdown" type="button">Новости</button>
+                <a class="nav__link nav__dropdown" href="#">Новости</a>
                 <ul class="nav__submenu">
                   <li class="nav__submenu-item">
                     <a class="nav__submenu-link" href="#news" data-header="nav-link">Общее</a>
@@ -98,8 +98,8 @@
         </header>
 
         <div class="hero__swiper swiper">
-          <div class="hero__wrapper swiper-wrapper" tabindex="0">
-            <div class="hero__slide swiper-slide" tabindex="0">
+          <div class="hero__wrapper swiper-wrapper">
+            <div class="hero__slide swiper-slide">
               <div class="hero__image">
                 <picture>
                   <source media="(min-width: 1440px)" type="image/webp" srcset="img/hero/slide-training-desktop.webp 1x, img/hero/slide-training-desktop@2x.webp 2x" width="1440" height="800">
@@ -116,13 +116,13 @@
                 <div class="hero__description">
                   <p>Погрузитесь в&nbsp;академическую программу, проходя практику в&nbsp;разных городах, ощущая настоящий студенческий стиль жизни!</p>
                   <div class="hero__link-container">
-                    <a class="hero__link button" href="#">Подробнее</a>
+                    <a class="hero__link button button--primary" href="#">Подробнее</a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="hero__slide swiper-slide" tabindex="0">
+            <div class="hero__slide swiper-slide">
               <div class="hero__image">
                 <picture>
                   <source media="(min-width: 1440px)" type="image/webp" srcset="img/hero/slide-volunteering-desktop.webp 1x, img/hero/slide-volunteering-desktop@2x.webp 2x" width="1440" height="800">
@@ -139,13 +139,13 @@
                 <div class="hero__description">
                   <p>Возможности для преподавания, органического сельского хозяйства, устойчивого образа жизни и&nbsp;другое.</p>
                   <div class="hero__link-container">
-                    <a class="hero__link button" href="#">Подробнее</a>
+                    <a class="hero__link button button--primary" href="#">Подробнее</a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="hero__slide swiper-slide" tabindex="0">
+            <div class="hero__slide swiper-slide">
               <div class="hero__image">
                 <picture>
                   <source media="(min-width: 1440px)" type="image/webp" srcset="img/hero/slide-internship-desktop.webp 1x, img/hero/slide-internship-desktop@2x.webp 2x" width="1440" height="800">
@@ -162,7 +162,7 @@
                 <div class="hero__description">
                   <p>Получите незаменимый опыт работы в&nbsp;ведущих мировых компаниях и&nbsp;государственных организациях.</p>
                   <div class="hero__link-container">
-                    <a class="hero__link button" href="#">Подробнее</a>
+                    <a class="hero__link button button--primary" href="#">Подробнее</a>
                   </div>
                 </div>
               </div>
