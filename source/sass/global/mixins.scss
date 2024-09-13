@@ -14,3 +14,20 @@
   position: absolute;
   background: $color-white;
 }
+
+@mixin title {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 400;
+  color: $color-additional;
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 34px;
+    line-height: 50px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 50px;
+  }
+}

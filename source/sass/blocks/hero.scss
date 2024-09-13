@@ -308,8 +308,12 @@
   }
 }
 
-.hero__link {
+.hero .hero__link {
   position: relative;
+
+  @media (min-width: $desktop-width) {
+    padding: 5px 5px 5px 30px;
+  }
 }
 
 .hero__link-container {

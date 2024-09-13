@@ -4,4 +4,12 @@
   font-weight: 400;
   line-height: 20px;
   overflow: hidden;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+  }
+
+  @media (min-width: $desktop-width) {
+    line-height: 26px;
+  }
 }

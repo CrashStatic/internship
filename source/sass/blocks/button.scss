@@ -12,6 +12,7 @@
   background-color: transparent;
   text-transform: uppercase;
   transition: all $trans-default;
+  cursor: pointer;
 
   &::after {
     content: "";
@@ -37,23 +38,6 @@
     z-index: 1;
   }
 
-  &:disabled,
-  &--disabled {
-    border: 1px solid $color-disabled;
-    background-color: transparent;
-    color: $color-disabled;
-    pointer-events: none;
-
-    &::before {
-      mask-image: url("/__spritemap#sprite-arrow-view");
-      background-color: $color-white;
-    }
-
-    &::after {
-      background-color: $color-disabled;
-    }
-  }
-
   @media (min-width: $tablet-width) {
     gap: 30px;
     padding: 4px 4px 4px 30px;
@@ -69,9 +53,22 @@
       right: 22px;
     }
   }
+}
 
-  @media (min-width: $desktop-width) {
-    padding: 5px 5px 5px 30px;
+.button:disabled,
+.button--disabled {
+  border: 1px solid $color-disabled;
+  background-color: transparent;
+  color: $color-disabled;
+  pointer-events: none;
+
+  &::before {
+    mask-image: url("/__spritemap#sprite-arrow-view");
+    background-color: $color-white;
+  }
+
+  &::after {
+    background-color: $color-disabled;
   }
 }
 

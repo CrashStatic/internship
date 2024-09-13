@@ -16,6 +16,7 @@
   color: $color-additional;
   text-transform: uppercase;
   font-weight: 500;
+  font-size: 14px;
   line-height: 14px;
   letter-spacing: 0.28px;
   justify-content: space-between;
@@ -97,25 +98,25 @@
     }
   }
 
-  &:disabled,
-  &--disabled {
-    border: 1px solid $color-disabled;
-    background-color: transparent;
-    color: $color-disabled;
-    pointer-events: none;
-
-    &::before {
-      background-color: $color-white;
-    }
-
-    &::after {
-      background-color: $color-disabled;
-    }
-  }
-
   @media (min-width: $tablet-width) {
     padding: 4px 4px 4px 20px;
     margin-top: -2px;
+  }
+}
+
+.nav__button:disabled,
+.nav__button--disabled {
+  border: 1px solid $color-disabled;
+  background-color: transparent;
+  color: $color-disabled;
+  pointer-events: none;
+
+  &::before {
+    background-color: $color-white;
+  }
+
+  &::after {
+    background-color: $color-disabled;
   }
 }
 
@@ -133,7 +134,7 @@
 
   &::before {
     width: 20px;
-    height:20px;
+    height: 20px;
     background-color: $color-additional;
     mask-image: url("/__spritemap#sprite-cross-view");
     mask-size: 20px 20px;
