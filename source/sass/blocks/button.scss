@@ -114,6 +114,8 @@
 
     &::before {
       background-color: $color-white;
+      transform: rotate(45deg);
+      top: unset;
     }
   }
 

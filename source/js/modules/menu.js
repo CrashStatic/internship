@@ -62,4 +62,4 @@ const initMenu = () => {
   });
 };
 
-export {initMenu};
+export { initMenu, bodyElement };

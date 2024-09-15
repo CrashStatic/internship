@@ -212,23 +212,28 @@
     <footer class="page-footer" id="footer" data-test="footer">gdfg</footer>
 
     <div class="modal">
-      <div class="modal__overlay"></div>
+      <div class="modal__wrapper">
+        <div class="modal__overlay"></div>
       <div class="modal__container">
         <button class="modal__close-button" type="button">
           <span class="visually-hidden">Закртыть модальное окно</span>
         </button>
         <h2 class="modal__title">Напишите нам</h2>
-        <p class="modal__description">Оставьте ваши контакты, если у&nbsp;вас остались вопросы&nbsp;&mdash; мы&nbsp;на&nbsp;них ответим!</p>
+        <p class="modal__description">Оставьте ваши контакты, если&nbsp;у&nbsp;вас остались вопросы&nbsp;&#8211; мы&nbsp;на&nbsp;них ответим!</p>
         <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
           <div class="modal__item">
-            <label class="modal__label" for="name">Имя</label>
-            <input class="modal__input" type="text" name="name" id="name" autocomplete="on" required>
+            <label>
+              <input class="modal__input" type="text" name="name" id="name" autocomplete="on" required>
+              <span class="modal__label">Имя</span>
+            </label>
           </div>
           <div class="modal__item">
-            <label class="modal__label" for="phone">Телефон</label>
-            <input class="modal__input modal__input--phone" type="text" name="phone" id="phone" autocomplete="on" required>
+            <label>
+              <input class="modal__input modal__input--phone" type="text" name="phone" id="phone" autocomplete="on" required>
+              <span class="modal__label">Телефон</span>
+            </label>
           </div>
-          <div class="modal__item">
+          <div class="modal__item modal__item--select">
             <label class="modal__label" for="place">Выберите город</label>
             <select class="modal__select" id="place" name="place" size="1" required>
               <option value=""></option>
@@ -238,12 +243,39 @@
               <option value="ekaterinburg">Екатеринбург</option>
             </select>
           </div>
+          <!-- <div class="modal__item modal__item--select">
+            <div class="modal__item-header">
+              <label class="modal__label" for="place">Выберите город</label>
+              <input class="modal__input modal__input--select" type="text" name="city" id="city" required readonly>
+              <span class="modal__input--current" value=""></span>
+            </div>
+            <div class="modal__item-list">
+              <button class="modal__item-option" type="button" value="st-petersburg">Санкт-Петербург</button>
+              <button class="modal__item-option" type="button" value="moscow">Москва</button>
+            </div> -->
+            <!-- <select class="modal__select" id="place" name="place" size="1" required>
+              <option value=""></option>
+              <option value="st-petersburg">Санкт-Петербург</option>
+              <option value="moscow">Москва</option>
+              <option value="krasnodar">Краснодар</option>
+              <option value="ekaterinburg">Екатеринбург</option>
+            </select>
+
+            <select class="modal__select" id="place" name="place" size="1" required>
+              <option value=""></option>
+              <option value="st-petersburg">Санкт-Петербург</option>
+              <option value="moscow">Москва</option>
+              <option value="krasnodar">Краснодар</option>
+              <option value="ekaterinburg">Екатеринбург</option>
+            </select> -->
+          <!-- </div> -->
           <div class="modal__checkbox">
             <input class="modal__checkbox-input" type="checkbox" name="agree" id="agree" required>
             <label class="modal__checkbox-label" for="agree">Я согласен на обработку моих персональных данных</label>
           </div>
           <button class="modal__button button button--primary" type="submit">Отправить</button>
         </form>
+      </div>
       </div>
     </div>
 
