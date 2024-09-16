@@ -1,13 +1,12 @@
 const header = document.querySelector('.header');
 const menuBtn = document.querySelector('.nav__button');
 const menuList = document.querySelector('.nav__list');
-const bodyElement = document.querySelector('.page');
-const overlay = document.querySelector('.overlay');
+const overlay = document.querySelectorAll('.overlay');
 const submenuBtn = document.querySelectorAll('.nav__dropdown');
 const navLinks = document.querySelectorAll('[data-header="nav-link"]');
 
 const initMenu = () => {
-  if (!menuBtn || !menuList || !bodyElement || !submenuBtn) {
+  if (!menuBtn || !menuList || !submenuBtn) {
     return;
   }
 
@@ -19,22 +18,26 @@ const initMenu = () => {
     }
   });
 
-  overlay.addEventListener('click', closeMenu);
+  overlay.forEach((item) => {
+    item.addEventListener('click', closeMenu);
+  });
 
   function closeMenu() {
     menuList.classList.remove('nav__list--opened');
-    bodyElement.classList.remove('scroll-lock');
     menuBtn.classList.remove('nav__button--open');
     header.classList.remove('header--opened');
-    overlay.style.display = 'none';
+    overlay.forEach((item) => {
+      item.style.display = 'none';
+    });
   }
 
   function openMenu() {
     menuList.classList.add('nav__list--opened');
-    bodyElement.classList.add('scroll-lock');
     menuBtn.classList.add('nav__button--open');
     header.classList.add('header--opened');
-    overlay.style.display = 'block';
+    overlay.forEach((item) => {
+      item.style.display = 'block';
+    });
   }
 
   // Подменю
@@ -62,4 +65,4 @@ const initMenu = () => {
   });
 };
 
-export { initMenu, bodyElement };
+export { initMenu };

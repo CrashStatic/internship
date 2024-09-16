@@ -36,6 +36,7 @@
       <section class="hero" data-test="hero">
         <h2 class="visually-hidden">Наши предложения</h2>
         <header class="header container">
+          <div class="overlay overlay--header"></div>
           <div class="header__logo">
             <img src="img/logo.svg" alt="Логотип сайта Internship" width="52" height="52">
           </div>
@@ -220,60 +221,66 @@
         </button>
         <h2 class="modal__title">Напишите нам</h2>
         <p class="modal__description">Оставьте ваши контакты, если&nbsp;у&nbsp;вас остались вопросы&nbsp;&#8211; мы&nbsp;на&nbsp;них ответим!</p>
-        <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
-          <div class="modal__item">
+        <form class="modal__form form" action="https://echo.htmlacademy.ru" method="post">
+          <div class="form__item">
             <label>
-              <input class="modal__input" type="text" name="name" id="name" autocomplete="on" required>
-              <span class="modal__label">Имя</span>
+              <input class="form__input" type="text" name="name" id="name" autocomplete="on" required>
+              <span class="form__label">Имя</span>
             </label>
           </div>
-          <div class="modal__item">
+          <div class="form__item">
             <label>
-              <input class="modal__input modal__input--phone" type="text" name="phone" id="phone" autocomplete="on" required>
-              <span class="modal__label">Телефон</span>
+              <input class="form__input form__input--phone" type="text" name="phone" id="phone" autocomplete="on" required>
+              <span class="form__label">Телефон</span>
             </label>
           </div>
-          <div class="modal__item modal__item--select">
-            <label class="modal__label" for="place">Выберите город</label>
-            <select class="modal__select" id="place" name="place" size="1" required>
-              <option value=""></option>
+          <div class="form__item form__custom-select">
+            <label class="form__label form__label--place" for="place">Выберите город</label>
+            <select class="form__select" id="place" name="place" size="1" required>
+              <option value="">&nbsp;</option>
               <option value="st-petersburg">Санкт-Петербург</option>
               <option value="moscow">Москва</option>
               <option value="krasnodar">Краснодар</option>
               <option value="ekaterinburg">Екатеринбург</option>
             </select>
           </div>
-          <!-- <div class="modal__item modal__item--select">
-            <div class="modal__item-header">
-              <label class="modal__label" for="place">Выберите город</label>
-              <input class="modal__input modal__input--select" type="text" name="city" id="city" required readonly>
-              <span class="modal__input--current" value=""></span>
+          <!-- <div class="custom-select">
+            <select id="mySelect">
+              <option value="option1">Опция 1</option>
+              <option value="option2">Опция 2</option>
+              <option value="option3">Опция 3</option>
+            </select>
+          </div> -->
+          <!-- <div class="form__item form__item--select">
+            <div class="form__item-header">
+              <label class="form__label" for="place">Выберите город</label>
+              <input class="form__input form__input--select" type="text" name="city" id="city" required readonly>
+              <span class="form__input--current" value=""></span>
             </div>
-            <div class="modal__item-list">
-              <button class="modal__item-option" type="button" value="st-petersburg">Санкт-Петербург</button>
-              <button class="modal__item-option" type="button" value="moscow">Москва</button>
-            </div> -->
-            <!-- <select class="modal__select" id="place" name="place" size="1" required>
+            <div class="form__item-list">
+              <button class="form__item-option" type="button" value="st-petersburg">Санкт-Петербург</button>
+              <button class="form__item-option" type="button" value="moscow">Москва</button>
+            </div>
+            <select class="form__select" id="place" name="place" size="1" required>
               <option value=""></option>
               <option value="st-petersburg">Санкт-Петербург</option>
               <option value="moscow">Москва</option>
               <option value="krasnodar">Краснодар</option>
               <option value="ekaterinburg">Екатеринбург</option>
             </select>
-
-            <select class="modal__select" id="place" name="place" size="1" required>
+            <select class="form__select" id="place" name="place" size="1" required>
               <option value=""></option>
               <option value="st-petersburg">Санкт-Петербург</option>
               <option value="moscow">Москва</option>
               <option value="krasnodar">Краснодар</option>
               <option value="ekaterinburg">Екатеринбург</option>
-            </select> -->
-          <!-- </div> -->
-          <div class="modal__checkbox">
-            <input class="modal__checkbox-input" type="checkbox" name="agree" id="agree" required>
-            <label class="modal__checkbox-label" for="agree">Я согласен на обработку моих персональных данных</label>
+            </select>
+          </div> -->
+          <div class="form__checkbox">
+            <input class="form__checkbox-input" type="checkbox" name="agree" id="agree" required>
+            <label class="form__checkbox-label" for="agree">Я согласен на обработку моих персональных данных</label>
           </div>
-          <button class="modal__button button button--primary" type="submit">Отправить</button>
+          <button class="form__button button button--primary" type="submit">Отправить</button>
         </form>
       </div>
       </div>

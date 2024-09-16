@@ -1,0 +1,251 @@
+.form__item label {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+  margin-bottom: 15px;
+
+  @media (min-width: $tablet-width) {
+    gap: 15px;
+    margin-bottom: 23px;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:hover {
+    .form__label {
+      opacity: 1;
+    }
+
+    .form__input {
+      border: 1px solid $color-dark;
+    }
+  }
+}
+
+.form__label {
+  font-size: 14px;
+  line-height: 14px;
+  opacity: 0.8;
+
+  &:focus-visible {
+    opacity: 1;
+  }
+}
+
+.form__input,
+.form__select {
+  border: 1px solid hsla(0, 0%, 28%, 0.3);
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  line-height: 18px;
+  color: $color-dark;
+  appearance: unset;
+  outline: none;
+
+  @media (min-width: $tablet-width) {
+    padding: 15px 24px;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    border: 1px solid $color-dark;
+
+    ~ .form__label {
+      opacity: 1;
+    }
+  }
+
+  &:disabled {
+    border: 1px solid hsla(214, 9%, 69%, 0.5);
+    background-color: hsla(214, 9%, 69%, 0.2);
+    pointer-events: none;
+
+    ~ .form__label {
+      opacity: 0.6;
+    }
+  }
+}
+
+.form__custom-select:hover .form__label--place {
+  opacity: 1;
+}
+
+.form__input--error,
+.form__select--error {
+  border: 1px solid $color-error;
+  background-color: hsla(357, 100%, 68%, 0.2);
+
+  .form__label {
+    opacity: 1;
+  }
+}
+
+.form__checkbox {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 29px;
+  }
+}
+
+.form__checkbox-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 6px 4px;
+  border-radius: 2px;
+  background-color: $color-additional;
+  appearance: unset;
+  flex-shrink: 0;
+}
+
+.form__checkbox-label {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+}
+
+.form__checkbox-input:checked::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: $color-white;
+  mask-image: url("/__spritemap#sprite-check-view");
+}
+
+.form__button {
+  position: relative;
+
+  @media (max-width: $mobile-width) {
+    width: 100%;
+    justify-content: end;
+    gap: 75px;
+    padding: 4px 3px 2px 20px;
+
+    &::before {
+      right: 15px;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 3px 4px 3px 30px;
+    margin: 0 auto;
+  }
+}
+
+.form__custom-select {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    mask-image: url("/__spritemap#sprite-arrow-dropdown-view");
+    background-color: $color-dark;
+    transform: rotate(180deg);
+    transition: transform $trans-default;
+    position: absolute;
+    top: 36px;
+    right: 20px;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 21px;
+
+    &::after {
+      top: 46px;
+    }
+  }
+}
+
+.form__custom-select:has(>.form__select-items--opened) {
+  &::after {
+    transform: rotate(0deg);
+    transition: transform $trans-default;
+  }
+}
+
+.form__custom-select {
+  margin-bottom: 15px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 21px;
+  }
+}
+
+.form__custom-select select {
+  display: none;
+}
+
+.form__item .form__label--place {
+  margin-bottom: 8px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 15px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 14px;
+  }
+}
+
+.form__select-items {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  z-index: 99;
+  display: none; /* Скрываем выпадающий список по умолчанию */
+  width: 100%;
+  border: 1px solid $color-dark;
+  border-radius: 8px;
+  margin-top: 4px;
+}
+
+.form__select-items--opened {
+  display: block;
+}
+
+.form__select-items div {
+  display: block;
+  padding: 15px 20px;
+  font-size: 14px;
+  line-height: 18px;
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    background-color: $color-additional;
+    color: $color-white;
+  }
+}
+
+.form__select-items div:first-child {
+  display: none;
+}

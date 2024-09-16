@@ -5,12 +5,13 @@
 import { initMenu } from './modules/menu.js';
 import { initSwiperHero } from './modules/hero-slider.js';
 import { initModal } from './modules/modal.js';
+import './modules/form.js';
 
 initMenu();
 initSwiperHero();
 initModal();
 
-const select = document.querySelector('.modal__select option');
+// const select = document.querySelector('.modal__select option');
 // const selectItem = document.querySelectorAll('.modal__item-option');
 
 // const select = () => {
@@ -41,4 +42,4 @@ const select = document.querySelector('.modal__select option');
 
 // select();
 
-select.style.padding = '10px';
+// select.style.padding = '10px';
