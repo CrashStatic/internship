@@ -1,0 +1,137 @@
+.programs__container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: 205px auto;
+  row-gap: 30px;
+}
+
+.programs__title {
+  @include title;
+}
+
+.programs__swiper {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+  width: 100%;
+}
+
+.programs__navigation {
+  display: flex;
+  justify-content: end;
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+}
+
+.programs__navigation-prev,
+.programs__navigation-next {
+  @include swiper-button;
+}
+
+.programs__link {
+  gap: 30px;
+  padding: 4px 4px 4px 30px;
+  position: relative;
+}
+
+.programs .programs__slide {
+  height: auto;
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  align-items: end;
+}
+
+.programs__image {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $overlay-photo;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.programs__info {
+  margin: 0 10px 18px;
+}
+
+.programs__subtitle {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  color: $color-additional;
+  background-color: $color-white;
+  margin: 0;
+  padding: 18px 18px 6px;
+  border-radius: 12px 12px 0 0;
+  width: fit-content;
+  position: relative;
+
+  &::after {
+    @include angle;
+
+    content: "";
+    width: 18px;
+    height: 18px;
+    mask-size: 18px 18px;
+    right: -18px;
+    bottom: 0;
+  }
+}
+
+.programs__description {
+  background-color: $color-white;
+  padding: 12px 18px 15px;
+  border-radius: 0 12px 12px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  p {
+    max-width: 188px;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 0;
+  }
+}
+
+.programs__info-link {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-additional;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: $color-white;
+    mask-image: url("/__spritemap#sprite-arrow-view");
+    mask-size: 10px 10px;
+    mask-repeat: no-repeat;
+  }
+}

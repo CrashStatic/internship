@@ -159,6 +159,7 @@
 
 .form__custom-select {
   position: relative;
+  margin-bottom: 15px;
 
   &::after {
     content: "";
@@ -193,14 +194,6 @@
 .form__input--place {
   display: block;
   width: 100%;
-}
-
-.form__custom-select {
-  margin-bottom: 15px;
-
-  @media (min-width: $tablet-width) {
-    margin-bottom: 21px;
-  }
 }
 
 .form__custom-select select {

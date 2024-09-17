@@ -8,6 +8,7 @@ import { initModal } from './modules/modal.js';
 import { setCustomSelect } from './modules/form/custom-select.js';
 import { initPhoneInput } from './modules/form/init-phone.js';
 import { initForm } from './modules/form/validate-form.js';
+import { initSwiperPrograms } from './modules/programs-slider.js';
 
 initMenu();
 initSwiperHero();
@@ -15,6 +16,7 @@ initModal();
 setCustomSelect();
 initPhoneInput();
 initForm();
+initSwiperPrograms();
 
 // const select = document.querySelector('.modal__select option');
 // const selectItem = document.querySelectorAll('.modal__item-option');
