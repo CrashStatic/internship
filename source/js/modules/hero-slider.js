@@ -1,23 +1,46 @@
-import Swiper from 'swiper/bundle';
+import Swiper from 'swiper';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
+// import 'swiper/css/bundle';
 // import 'swiper/css/pagination';
 
 // const swiperContainer = document.querySelector('.swiper-wrapper');
 // const swiperLinks = swiperContainer.querySelectorAll('a[href]');
+
+const swiperLinks = document.querySelectorAll('.hero__link');
 
 const initSwiperHero = () => {
   const swiper = new Swiper('.hero__swiper', {
     modules: [ Pagination ],
 
     // If we need pagination
+    // pagination: {
+    //   el: '.swiper-slide-active .swiper-pagination',
+    //   type: 'bullets',
+    //   bulletClass: 'hero__pagination-bullet',
+    //   bulletActiveClass: 'hero__pagination-bullet--active',
+    //   clickable: true,
+    // },
+
     pagination: {
-      el: '.swiper-slide-active .swiper-pagination',
-      type: 'bullets',
-      bulletClass: 'hero__pagination-bullet',
-      bulletActiveClass: 'hero__pagination-bullet--active',
+      el: '.swiper-slide-active .hero__pagination',
       clickable: true,
+      bulletElement: 'button type="button" aria-label="Переключить слайд"',
     },
+
+    // watchOverflow: true,
+    spaceBetween: 40,
+    slidesPerView: 1,
+    centeredSlides: false,
+    direction: 'horizontal',
+    initialSlide: 0,
+    slidesPerGroup: 1,
+    loop: true,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true,
+    },
+    // preventClicks: true,
 
     // pagination: {
     //   el: '.swiper-pagination',
@@ -30,15 +53,15 @@ const initSwiperHero = () => {
     //   onlyInViewport: false,
     // },
 
-    keyboard: true,
+    // keyboard: true,
     // focusableElements: 'a, button',
 
-    loop: true,
+    // loop: true,
 
 
     // Default parameters
-    slidesPerView: 1,
-    spaceBetween: 40,
+    // slidesPerView: 1,
+    // spaceBetween: 40,
 
     breakpoints: {
       1440: {
@@ -50,23 +73,35 @@ const initSwiperHero = () => {
 
     // Устанавливает пагинацию на каждый слайд
     on: {
-      slideChangeTransitionStart: function () {
+      slideChangeTransitionStart: () => {
         swiper.pagination.init();
         swiper.pagination.render();
         swiper.pagination.update();
+        swiperLinks.forEach((button) => {
+          button.setAttribute('tabindex', '-1');
+        });
+        swiperLinks[swiper.realIndex].setAttribute('tabindex', '0');
       }
     }
   });
 
+  // const heroLinks = document.querySelectorAll('.hero__link');
+
+  // heroLinks.forEach((link, index) => {
+  //   link.addEventListener('focus', () => {
+  //     swiper.slideTo(index);
+  //   });
+  // });
+
   // swiper.params.pagination
 
-  const heroLinks = document.querySelectorAll('.hero__link');
+  // const heroLinks = document.querySelectorAll('.hero__link');
 
-  heroLinks.forEach((link, index) => {
-    link.addEventListener('focus', () => {
-      swiper.slideTo(index);
-    });
-  });
+  // heroLinks.forEach((link, index) => {
+  //   link.addEventListener('focus', () => {
+  //     swiper.slideTo(index);
+  //   });
+  // });
 
   // Запрещает Tab по неактивным слайдам
   // function setTabIndex() {
@@ -84,6 +119,7 @@ const initSwiperHero = () => {
   //   }
   //   setTabIndex();
   // });
+
 
   // swiper.enable();
 
