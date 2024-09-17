@@ -1,8 +1,13 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const selectElement = document.getElementById('place');
-  const customSelect = document.createElement('div');
-  customSelect.setAttribute('class', 'form__input');
+const selectElement = document.getElementById('place');
+
+const setCustomSelect = () => {
+  const customSelect = document.createElement('input');
+  customSelect.setAttribute('class', 'form__input form__input--place');
   customSelect.setAttribute('tabindex', '0');
+  // customSelect.setAttribute('value', '');
+
+  // customSelect.setAttribute('required', 'true');
+
   customSelect.innerHTML = selectElement.options[selectElement.selectedIndex].innerHTML;
 
   const optionsContainer = document.createElement('div');
@@ -10,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   for (let i = 0; i < selectElement.length; i++) {
     const optionDiv = document.createElement('div');
+    // optionDiv.setAttribute('required', 'true');
+
     // optionDiv.setAttribute('class', 'form__div');
 
     optionDiv.setAttribute('tabindex', '0');
@@ -17,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     optionDiv.addEventListener('click', function () {
       selectElement.selectedIndex = i;
       customSelect.innerHTML = this.innerHTML;
+      customSelect.value = this.innerHTML;
       closeAllSelect();
     });
 
@@ -25,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         selectElement.selectedIndex = i; // Установка выбранного индекса
         customSelect.innerHTML = e.target.innerHTML;
+        customSelect.value = e.target.innerHTML;
         closeAllSelect();
       }
     });
@@ -41,9 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // const isEnterKey = (evt) => evt.key === 'Enter';
 
   customSelect.addEventListener('keydown', (e) => {
-    e.stopPropagation();
+    // e.stopPropagation();
+    // e.preventDefault();
 
     if (e.key === 'Enter') {
+      e.preventDefault();
       optionsContainer.classList.toggle('form__select-items--opened');
 
       // for (let i = 0; i < selectElement.length; i++) {
@@ -80,4 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.addEventListener('click', closeAllSelect);
-});
+};
+
+export { setCustomSelect };

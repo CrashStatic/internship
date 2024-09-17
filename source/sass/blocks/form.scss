@@ -85,8 +85,7 @@
   opacity: 1;
 }
 
-.form__input--error,
-.form__select--error {
+.form__input--error {
   border: 1px solid $color-error;
   background-color: hsla(357, 100%, 68%, 0.2);
 
@@ -132,6 +131,10 @@
   height: 10px;
   background-color: $color-white;
   mask-image: url("/__spritemap#sprite-check-view");
+}
+
+.form__input--error-checkbox {
+  background-color: hsla(357, 100%, 68%, 0.2);
 }
 
 .form__button {
@@ -187,6 +190,11 @@
   }
 }
 
+.form__input--place {
+  display: block;
+  width: 100%;
+}
+
 .form__custom-select {
   margin-bottom: 15px;
 
@@ -213,10 +221,9 @@
 
 .form__select-items {
   position: absolute;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: $color-white;
   z-index: 99;
-  display: none; /* Скрываем выпадающий список по умолчанию */
+  display: none;
   width: 100%;
   border: 1px solid $color-dark;
   border-radius: 8px;

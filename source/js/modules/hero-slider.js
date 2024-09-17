@@ -36,6 +36,8 @@ const initSwiperHero = () => {
     initialSlide: 0,
     slidesPerGroup: 1,
     loop: true,
+    loopAdditionalSlides: 3,
+    speed: 600,
     effect: 'fade',
     fadeEffect: {
       crossFade: true,
@@ -69,7 +71,7 @@ const initSwiperHero = () => {
       }
     },
 
-    breakpointsBase: 'window',
+    // breakpointsBase: 'window',
 
     // Устанавливает пагинацию на каждый слайд
     on: {
