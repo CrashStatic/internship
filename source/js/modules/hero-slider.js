@@ -74,10 +74,10 @@ const initSwiperHero = () => {
         swiper.pagination.init();
         swiper.pagination.render();
         swiper.pagination.update();
-        swiperLinks.forEach((button) => {
-          button.setAttribute('tabindex', '-1');
-        });
-        swiperLinks[swiper.realIndex].setAttribute('tabindex', '0');
+        // swiperLinks.forEach((button) => {
+        //   button.setAttribute('tabindex', '-1');
+        // });
+        // swiperLinks[swiper.realIndex].setAttribute('tabindex', '0');
       }
     }
   });
@@ -101,21 +101,21 @@ const initSwiperHero = () => {
   // });
 
   // Запрещает Tab по неактивным слайдам
-  // function setTabIndex() {
-  //   swiper.slides[swiper.activeIndex].querySelector('a').setAttribute('tabindex', '0');
-  // }
+  function setTabIndex() {
+    swiper.slides[swiper.activeIndex].querySelector('a').setAttribute('tabindex', '0');
+  }
 
-  // for (const link of swiperLinks) {
-  //   link.setAttribute('tabindex', '-1');
-  //   setTabIndex();
-  // }
+  for (const link of swiperLinks) {
+    link.setAttribute('tabindex', '-1');
+    setTabIndex();
+  }
 
-  // swiper.on('activeIndexChange', () => {
-  //   for (const link of swiperLinks) {
-  //     link.setAttribute('tabindex', '-1');
-  //   }
-  //   setTabIndex();
-  // });
+  swiper.on('activeIndexChange', () => {
+    for (const link of swiperLinks) {
+      link.setAttribute('tabindex', '-1');
+    }
+    setTabIndex();
+  });
 
 
   // swiper.enable();
