@@ -73,6 +73,7 @@ const initForm = () => {
     // Проверяем, что номер пользователя содержит нужное количество цифр
     if (!(userPhone.length === phoneLength)) {
       phoneInput.classList.add('form__input--error');
+      // phoneInput.setAttribute('required', 'true');
       // phoneInput.setCustomValidity('Неполный номер телефона');
     } else {
       phoneInput.classList.remove('form__input--error');

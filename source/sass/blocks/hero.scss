@@ -101,63 +101,63 @@
   // }
 }
 
-// .hero__pagination-bullet {
-//   width: 8px;
-//   height: 8px;
-//   border: 2px solid $color-additional;
-//   border-radius: 50%;
-//   background-color: transparent;
-//   transition: background-color $trans-default;
-//   cursor: pointer;
+.hero__pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border: 2px solid $color-additional;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color $trans-default;
+  cursor: pointer;
 
-//   &:hover {
-//     border: 2px solid $color-white;
-//     background-color: $color-additional;
-//     opacity: 0.7;
-//   }
+  &:hover {
+    border: 2px solid $color-white;
+    background-color: $color-additional;
+    opacity: 0.7;
+  }
 
-//   &:focus,
-//   &:focus-visible {
-//     outline: none;
-//   }
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
 
-//   &:focus-visible {
-//     background-color: $color-additional;
-//     border: none;
-//     opacity: 1;
-//   }
+  &:focus-visible {
+    background-color: $color-additional;
+    border: none;
+    opacity: 1;
+  }
 
-//   &--active,
-//   &:active {
-//     background-color: $color-action;
-//     border: none;
-//   }
+  &--active,
+  &:active {
+    background-color: $color-action;
+    border: none;
+  }
 
-//   @media (min-width: $tablet-width) {
-//     width: 12px;
-//     height: 12px;
-//   }
+  @media (min-width: $tablet-width) {
+    width: 12px;
+    height: 12px;
+  }
 
-//   // @include hover {
-//   //   border-color: $color-primary-darker;
-//   //   outline: none;
+  // @include hover {
+  //   border-color: $color-primary-darker;
+  //   outline: none;
 
-//   //   &:active {
-//   //     background-color: $color-primary;
-//   //     outline: none;
-//   //   }
-//   // }
+  //   &:active {
+  //     background-color: $color-primary;
+  //     outline: none;
+  //   }
+  // }
 
-//   // &:active {
-//   //   background-color: $color-primary;
-//   //   outline: none;
-//   // }
+  // &:active {
+  //   background-color: $color-primary;
+  //   outline: none;
+  // }
 
-//   // &:focus,
-//   // &:focus-visible {
-//   //   border-color: $color-primary-darker;
-//   // }
-// }
+  // &:focus,
+  // &:focus-visible {
+  //   border-color: $color-primary-darker;
+  // }
+}
 
 
 // .hero .swiper-pagination {
