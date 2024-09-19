@@ -1,0 +1,85 @@
+.grant {
+  background-color: $color-additional;
+}
+
+.grant__container {
+  padding-top: 71px;
+  padding-bottom: 70px;
+  color: $color-white;
+}
+
+.grant__head {
+  margin-bottom: 40px;
+}
+
+.grant__title {
+  @include title;
+  color: $color-white;
+  margin-bottom: 14px;
+}
+
+.grant__head p {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.grant__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+}
+
+.grant__info {
+  max-width: 220px;
+  font-size: 18px;
+  line-height: 22px;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.grant__list {
+  @include list;
+  counter-reset: section;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.grant__item {
+  border: 1px solid $color-main;
+  border-radius: 16px;
+  padding: 24px 25px;
+  position: relative;
+  margin-left: 15px;
+
+  &::before {
+    content: counter(section);
+    counter-increment: section;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: -6px;
+    left: -16px;;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 500;
+    background-color: $color-additional;
+  }
+}
+
+.grant__item p {
+  color: $color-main;
+  margin: 0;
+}

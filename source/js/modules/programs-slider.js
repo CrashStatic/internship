@@ -33,7 +33,7 @@ const initSwiperPrograms = () => {
       horizontalClass: 'slider__scrollbar',
       draggable: true,
       dragClass: 'programs__drag-element',
-      dragSize: '326px',
+      dragSize: 326,
     },
 
     // Responsive breakpoints
@@ -62,7 +62,7 @@ const initSwiperPrograms = () => {
         allowTouchMove: false,
         scrollbar: {
           enabled: true,
-          dragSize: '394px',
+          dragSize: 394,
         },
       }
     },
