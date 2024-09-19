@@ -20,7 +20,6 @@
     </svg> -->
     <!-- примеры требуемых атрибутов data-test="*" -->
 
-    <!-- <div data-test="grant">grant</div> -->
     <!-- <div data-test="news">news</div> -->
     <!-- <div data-test="FAQ">FAQ</div> -->
     <!-- <div data-test="reviews">reviews</div> -->
@@ -383,13 +382,13 @@
         <form class="modal__form form" action="https://echo.htmlacademy.ru" method="post">
           <div class="form__item">
             <label>
-              <input class="form__input" type="text" name="name" id="name" autocomplete="on">
+              <input class="form__input" type="text" name="name" id="name" autocomplete="on" required>
               <span class="form__label">Имя</span>
             </label>
           </div>
           <div class="form__item">
             <label>
-              <input class="form__input form__input--phone" type="text" name="phone" id="phone">
+              <input class="form__input form__input--phone" type="text" name="phone" id="phone" required>
               <span class="form__label">Телефон</span>
             </label>
           </div>
@@ -404,7 +403,7 @@
             </select>
           </div>
           <div class="form__checkbox">
-            <input class="form__checkbox-input form__input" type="checkbox" name="agree" id="agree">
+            <input class="form__checkbox-input form__input" type="checkbox" name="agree" id="agree" required>
             <label class="form__checkbox-label" for="agree">Я согласен на обработку моих персональных данных</label>
           </div>
           <button class="form__button button button--primary" type="submit">Отправить</button>

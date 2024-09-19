@@ -85,15 +85,6 @@
   opacity: 1;
 }
 
-.form__input--error {
-  border: 1px solid $color-error;
-  background-color: hsla(357, 100%, 68%, 0.2);
-
-  .form__label {
-    opacity: 1;
-  }
-}
-
 .form__checkbox {
   display: flex;
   gap: 10px;
@@ -133,9 +124,46 @@
   mask-image: url("/__spritemap#sprite-check-view");
 }
 
-.form__input--error-checkbox {
+// .form__input .form__input--error {
+//   border: 1px solid $color-error;
+//   background-color: hsla(357, 100%, 68%, 0.2);
+
+//   .form__label {
+//     opacity: 1;
+//   }
+// }
+
+
+// .form--error .form__input:invalid {
+//   border: 1px solid #ff5e66;
+//   background-color: hsla(357, 100%, 68%, 0.2);
+
+//   .form__label {
+//     opacity: 1;
+//   }
+// }
+
+// .form__input:invalid {
+//   border: 1px solid #ff5e66;
+//   background-color: hsla(357, 100%, 68%, 0.2);
+
+//   .form__label {
+//     opacity: 1;
+//   }
+// }
+
+.form__input--error {
+  border: 1px solid #ff5e66;
   background-color: hsla(357, 100%, 68%, 0.2);
+
+  .form__label {
+    opacity: 1;
+  }
 }
+
+// .form__input--error-checkbox {
+//   background-color: hsla(357, 100%, 68%, 0.2);
+// }
 
 .form__button {
   position: relative;

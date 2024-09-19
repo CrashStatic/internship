@@ -4,9 +4,10 @@ const setCustomSelect = () => {
   const customSelect = document.createElement('input');
   customSelect.setAttribute('class', 'form__input form__input--place');
   customSelect.setAttribute('tabindex', '0');
+  customSelect.setAttribute('readonly', 'true');
   // customSelect.setAttribute('value', '');
 
-  // customSelect.setAttribute('required', 'true');
+  customSelect.setAttribute('required', '');
 
   customSelect.innerHTML = selectElement.options[selectElement.selectedIndex].innerHTML;
 
