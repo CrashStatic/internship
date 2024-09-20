@@ -328,7 +328,7 @@
         </div>
       </section>
 
-      <section class="grant" data-test="grant">
+      <section class="grant" id="grant" data-test="grant">
         <div class="grant__container container">
           <div class="grant__head">
             <h2 class="grant__title">Как поехать</h2>
@@ -360,6 +360,321 @@
                 <p>За&nbsp;последние 2&nbsp;года быть не&nbsp;больше 3х&nbsp;месяцев подряд непрерывно в&nbsp;одной стране</p>
               </li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="news" id="news" data-test="news">
+        <div class="news__container container">
+          <h2 class="news__title">Новости и материалы</h2>
+          <div class="news__tabs">
+            <button class="news__tab" type="button" data-tab="all">Общее</button>
+            <button class="news__tab" type="button" data-tab="volunteering">Волонтёрство</button>
+            <button class="news__tab" type="button" data-tab="internship">Стажировки</button>
+            <button class="news__tab" type="button" data-tab="career">Карьера</button>
+            <button class="news__tab" type="button" data-tab="journeys">Путешествия</button>
+          </div>
+
+          <div class="news__swiper swiper">
+            <div class="news__wrapper swiper-wrapper">
+              <div class="news__slide swiper-slide">
+                <div class="news__inner">
+                  <div class="news__image">
+                    <picture>
+                      <source media="(min-width: 1440px)" type="image/webp" srcset="img/news/internship-desktop.webp 1x, img/news/internship-desktop@2x.webp 2x" width="604" height="400">
+                      <source media="(min-width: 768px)" type="image/webp" srcset="img/news/internship-tablet.webp 1x, img/news/internship-tablet@2x.webp 2x" width="324" height="350">
+                      <source type="image/webp" srcset="img/news/internship-mobile.webp 1x, img/news/internship-mobile@2x.webp 2x" width="290" height="330">
+                      <source media="(min-width: 1440px)" type="image/jpg" srcset="img/news/internship-desktop.jpg 1x, img/news/internship-desktop@2x.jpg 2x" width="604" height="400">
+                      <source media="(min-width: 768px)" type="image/jpg" srcset="img/news/internship-tablet.jpg 1x, img/news/internship-tablet@2x.jpg 2x" width="324" height="350">
+                      <img src="img/news/internship-mobile.jpg" srcset="img/news/internship-mobile@2x.jpg 2x" width="290" height="330" alt="Фотография с интервью с Сашей">
+                    </picture>
+                  </div>
+                  <div class="news__info">
+                    <time class="news__date" datetime="2023-03-23">23/03/2023</time>
+                    <h3 class="news__subtitle">Интервью с&nbsp;участницей программы стажировки</h3>
+                    <div class="news__description">
+                      <p>Саша рассказывает, как попала в&nbsp;программу и&nbsp;как прошла 6-месячная стажировка в&nbsp;ISOFound</p>
+                      <a class="news__info-link" href="#">
+                        <span class="visually-hidden">Прочитать статью</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="news__slide swiper-slide">
+                <div class="news__inner">
+                  <div class="news__image">
+                    <picture>
+                      <source media="(min-width: 1440px)" type="image/webp" srcset="img/news/journey-desktop.webp 1x, img/news/journey-desktop@2x.webp 2x" width="286" height="400">
+                      <source media="(min-width: 768px)" type="image/webp" srcset="img/news/journey-tablet.webp 1x, img/news/journey-tablet@2x.webp 2x" width="324" height="350">
+                      <source type="image/webp" srcset="img/news/journey-mobile.webp 1x, img/news/journey-mobile@2x.webp 2x" width="290" height="240">
+                      <source media="(min-width: 1440px)" type="image/jpg" srcset="img/news/journey-desktop.jpg 1x, img/news/journey-desktop@2x.jpg 2x" width="286" height="400">
+                      <source media="(min-width: 768px)" type="image/jpg" srcset="img/news/journey-tablet.jpg 1x, img/news/journey-tablet@2x.jpg 2x" width="324" height="350">
+                      <img src="img/news/journey-mobile.jpg" srcset="img/news/journey-mobile@2x.jpg 2x" width="290" height="240" alt="Вид на пляж города">
+                    </picture>
+                  </div>
+                  <div class="news__info">
+                    <time class="news__date" datetime="2023-03-20">20/03/2023</time>
+                    <h3 class="news__subtitle">Путешествуем по&nbsp;миру</h3>
+                    <div class="news__description">
+                      <p>Какие места посещают наши студенты весной</p>
+                      <a class="news__info-link" href="#">
+                        <span class="visually-hidden">Прочитать статью</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="news__slide swiper-slide">
+                <div class="news__inner">
+                  <div class="news__image">
+                    <picture>
+                      <source media="(min-width: 1440px)" type="image/webp" srcset="img/news/volunteering-desktop.webp 1x, img/news/volunteering-desktop@2x.webp 2x" width="286" height="400">
+                      <source type="image/webp" srcset="img/news/volunteering-tablet.webp 1x, img/news/volunteering-tablet@2x.webp 2x" width="324" height="350">
+                      <source media="(min-width: 1440px)" type="image/jpg" srcset="img/news/volunteering-desktop.jpg 1x, img/news/volunteering-desktop@2x.jpg 2x" width="286" height="400">
+                      <img src="img/news/volunteering-tablet.jpg" srcset="img/news/volunteering-tablet@2x.jpg 2x" width="324" height="350" alt="Значок волентёра">
+                    </picture>
+                  </div>
+                  <div class="news__info">
+                    <time class="news__date" datetime="2023-03-17">17/03/2023</time>
+                    <h3 class="news__subtitle">Новая программа волонтёрства</h3>
+                    <div class="news__description">
+                      <p>Программа помощи детям длительностью 4&nbsp;месяца</p>
+                      <a class="news__info-link" href="#">
+                        <span class="visually-hidden">Прочитать статью</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="news__slide swiper-slide">
+                <div class="news__inner">
+                  <div class="news__image">
+                    <picture>
+                      <source media="(min-width: 1440px)" type="image/webp" srcset="img/news/career-desktop.webp 1x, img/news/career-desktop@2x.webp 2x" width="286" height="400">
+                      <source type="image/webp" srcset="img/news/career-tablet.webp 1x, img/news/career-tablet@2x.webp 2x" width="324" height="350">
+                      <source media="(min-width: 1440px)" type="image/jpg" srcset="img/news/career-desktop.jpg 1x, img/news/career-desktop@2x.jpg 2x" width="286" height="400">
+                      <img src="img/news/career-tablet.jpg" srcset="img/news/career-tablet@2x.jpg 2x" width="324" height="350" alt="Рабочий стол с компьютерами">
+                    </picture>
+                  </div>
+                  <div class="news__info">
+                    <time class="news__date" datetime="2023-03-10">10/03/2023</time>
+                    <h3 class="news__subtitle">Построй свою карьеру</h3>
+                    <div class="news__description">
+                      <p>Ведущие компании готовы трудоустроить выпускников стажировки</p>
+                      <a class="news__info-link" href="#">
+                        <span class="visually-hidden">Прочитать статью</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+              <div class="news__slide swiper-slide">
+                <div class="news__inner">
+                  <div class="news__image">
+                    <picture>
+                      <source media="(min-width: 1440px)" type="image/webp" srcset="img/news/career-desktop.webp 1x, img/news/career-desktop@2x.webp 2x" width="286" height="400">
+                      <source type="image/webp" srcset="img/news/career-tablet.webp 1x, img/news/career-tablet@2x.webp 2x" width="324" height="350">
+                      <source media="(min-width: 1440px)" type="image/jpg" srcset="img/news/career-desktop.jpg 1x, img/news/career-desktop@2x.jpg 2x" width="286" height="400">
+                      <img src="img/news/career-tablet.jpg" srcset="img/news/career-tablet@2x.jpg 2x" width="324" height="350" alt="Рабочий стол с компьютерами">
+                    </picture>
+                  </div>
+                  <div class="news__info">
+                    <time class="news__date" datetime="2023-03-10">10/03/2023</time>
+                    <h3 class="news__subtitle">Построй свою карьеру</h3>
+                    <div class="news__description">
+                      <p>Ведущие компании готовы трудоустроить выпускников стажировки</p>
+                      <a class="news__info-link" href="#">
+                        <span class="visually-hidden">Прочитать статью</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="news__slide swiper-slide">
+                <div class="news__inner">
+                  <div class="news__image">
+                    <picture>
+                      <source media="(min-width: 1440px)" type="image/webp" srcset="img/news/career-desktop.webp 1x, img/news/career-desktop@2x.webp 2x" width="286" height="400">
+                      <source type="image/webp" srcset="img/news/career-tablet.webp 1x, img/news/career-tablet@2x.webp 2x" width="324" height="350">
+                      <source media="(min-width: 1440px)" type="image/jpg" srcset="img/news/career-desktop.jpg 1x, img/news/career-desktop@2x.jpg 2x" width="286" height="400">
+                      <img src="img/news/career-tablet.jpg" srcset="img/news/career-tablet@2x.jpg 2x" width="324" height="350" alt="Рабочий стол с компьютерами">
+                    </picture>
+                  </div>
+                  <div class="news__info">
+                    <time class="news__date" datetime="2023-03-10">10/03/2023</time>
+                    <h3 class="news__subtitle">Построй свою карьеру</h3>
+                    <div class="news__description">
+                      <p>Ведущие компании готовы трудоустроить выпускников стажировки</p>
+                      <a class="news__info-link" href="#">
+                        <span class="visually-hidden">Прочитать статью</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="news__slide swiper-slide">
+                <div class="news__inner">
+                  <div class="news__image">
+                    <picture>
+                      <source media="(min-width: 1440px)" type="image/webp" srcset="img/news/career-desktop.webp 1x, img/news/career-desktop@2x.webp 2x" width="286" height="400">
+                      <source type="image/webp" srcset="img/news/career-tablet.webp 1x, img/news/career-tablet@2x.webp 2x" width="324" height="350">
+                      <source media="(min-width: 1440px)" type="image/jpg" srcset="img/news/career-desktop.jpg 1x, img/news/career-desktop@2x.jpg 2x" width="286" height="400">
+                      <img src="img/news/career-tablet.jpg" srcset="img/news/career-tablet@2x.jpg 2x" width="324" height="350" alt="Рабочий стол с компьютерами">
+                    </picture>
+                  </div>
+                  <div class="news__info">
+                    <time class="news__date" datetime="2023-03-10">10/03/2023</time>
+                    <h3 class="news__subtitle">Построй свою карьеру</h3>
+                    <div class="news__description">
+                      <p>Ведущие компании готовы трудоустроить выпускников стажировки</p>
+                      <a class="news__info-link" href="#">
+                        <span class="visually-hidden">Прочитать статью</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="news__slide swiper-slide">
+                <div class="news__inner">
+                  <div class="news__image">
+                    <picture>
+                      <source media="(min-width: 1440px)" type="image/webp" srcset="img/news/career-desktop.webp 1x, img/news/career-desktop@2x.webp 2x" width="286" height="400">
+                      <source type="image/webp" srcset="img/news/career-tablet.webp 1x, img/news/career-tablet@2x.webp 2x" width="324" height="350">
+                      <source media="(min-width: 1440px)" type="image/jpg" srcset="img/news/career-desktop.jpg 1x, img/news/career-desktop@2x.jpg 2x" width="286" height="400">
+                      <img src="img/news/career-tablet.jpg" srcset="img/news/career-tablet@2x.jpg 2x" width="324" height="350" alt="Рабочий стол с компьютерами">
+                    </picture>
+                  </div>
+                  <div class="news__info">
+                    <time class="news__date" datetime="2023-03-10">10/03/2023</time>
+                    <h3 class="news__subtitle">Построй свою карьеру</h3>
+                    <div class="news__description">
+                      <p>Ведущие компании готовы трудоустроить выпускников стажировки</p>
+                      <a class="news__info-link" href="#">
+                        <span class="visually-hidden">Прочитать статью</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="news__slide swiper-slide">
+                <div class="news__inner">
+                  <div class="news__image">
+                    <picture>
+                      <source media="(min-width: 1440px)" type="image/webp" srcset="img/news/career-desktop.webp 1x, img/news/career-desktop@2x.webp 2x" width="286" height="400">
+                      <source type="image/webp" srcset="img/news/career-tablet.webp 1x, img/news/career-tablet@2x.webp 2x" width="324" height="350">
+                      <source media="(min-width: 1440px)" type="image/jpg" srcset="img/news/career-desktop.jpg 1x, img/news/career-desktop@2x.jpg 2x" width="286" height="400">
+                      <img src="img/news/career-tablet.jpg" srcset="img/news/career-tablet@2x.jpg 2x" width="324" height="350" alt="Рабочий стол с компьютерами">
+                    </picture>
+                  </div>
+                  <div class="news__info">
+                    <time class="news__date" datetime="2023-03-10">10/03/2023</time>
+                    <h3 class="news__subtitle">Построй свою карьеру</h3>
+                    <div class="news__description">
+                      <p>Ведущие компании готовы трудоустроить выпускников стажировки</p>
+                      <a class="news__info-link" href="#">
+                        <span class="visually-hidden">Прочитать статью</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="news__slide swiper-slide">
+                <div class="news__inner">
+                  <div class="news__image">
+                    <picture>
+                      <source media="(min-width: 1440px)" type="image/webp" srcset="img/news/career-desktop.webp 1x, img/news/career-desktop@2x.webp 2x" width="286" height="400">
+                      <source type="image/webp" srcset="img/news/career-tablet.webp 1x, img/news/career-tablet@2x.webp 2x" width="324" height="350">
+                      <source media="(min-width: 1440px)" type="image/jpg" srcset="img/news/career-desktop.jpg 1x, img/news/career-desktop@2x.jpg 2x" width="286" height="400">
+                      <img src="img/news/career-tablet.jpg" srcset="img/news/career-tablet@2x.jpg 2x" width="324" height="350" alt="Рабочий стол с компьютерами">
+                    </picture>
+                  </div>
+                  <div class="news__info">
+                    <time class="news__date" datetime="2023-03-10">10/03/2023</time>
+                    <h3 class="news__subtitle">Построй свою карьеру</h3>
+                    <div class="news__description">
+                      <p>Ведущие компании готовы трудоустроить выпускников стажировки</p>
+                      <a class="news__info-link" href="#">
+                        <span class="visually-hidden">Прочитать статью</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="news__slide swiper-slide">
+                <div class="news__inner">
+                  <div class="news__image">
+                    <picture>
+                      <source media="(min-width: 1440px)" type="image/webp" srcset="img/news/career-desktop.webp 1x, img/news/career-desktop@2x.webp 2x" width="286" height="400">
+                      <source type="image/webp" srcset="img/news/career-tablet.webp 1x, img/news/career-tablet@2x.webp 2x" width="324" height="350">
+                      <source media="(min-width: 1440px)" type="image/jpg" srcset="img/news/career-desktop.jpg 1x, img/news/career-desktop@2x.jpg 2x" width="286" height="400">
+                      <img src="img/news/career-tablet.jpg" srcset="img/news/career-tablet@2x.jpg 2x" width="324" height="350" alt="Рабочий стол с компьютерами">
+                    </picture>
+                  </div>
+                  <div class="news__info">
+                    <time class="news__date" datetime="2023-03-10">10/03/2023</time>
+                    <h3 class="news__subtitle">Построй свою карьеру</h3>
+                    <div class="news__description">
+                      <p>Ведущие компании готовы трудоустроить выпускников стажировки</p>
+                      <a class="news__info-link" href="#">
+                        <span class="visually-hidden">Прочитать статью</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="news__slide swiper-slide">
+                <div class="news__inner">
+                  <div class="news__image">
+                    <picture>
+                      <source media="(min-width: 1440px)" type="image/webp" srcset="img/news/career-desktop.webp 1x, img/news/career-desktop@2x.webp 2x" width="286" height="400">
+                      <source type="image/webp" srcset="img/news/career-tablet.webp 1x, img/news/career-tablet@2x.webp 2x" width="324" height="350">
+                      <source media="(min-width: 1440px)" type="image/jpg" srcset="img/news/career-desktop.jpg 1x, img/news/career-desktop@2x.jpg 2x" width="286" height="400">
+                      <img src="img/news/career-tablet.jpg" srcset="img/news/career-tablet@2x.jpg 2x" width="324" height="350" alt="Рабочий стол с компьютерами">
+                    </picture>
+                  </div>
+                  <div class="news__info">
+                    <time class="news__date" datetime="2023-03-10">10/03/2023</time>
+                    <h3 class="news__subtitle">Построй свою карьеру</h3>
+                    <div class="news__description">
+                      <p>Ведущие компании готовы трудоустроить выпускников стажировки</p>
+                      <a class="news__info-link" href="#">
+                        <span class="visually-hidden">Прочитать статью</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="news__navigation">
+              <button class="news__navigation-prev" type="button">
+                <span class="visually-hidden">Назад</span>
+                <svg aria-hidden="true" focusable="false" width="10" height="10">
+                  <use href="/__spritemap#sprite-swiper-arrow-left"></use>
+                </svg>
+              </button>
+
+              <div class="news__pagination">
+                <div class="news__pagination-inner"></div>
+              </div>
+
+              <button class="news__navigation-next" type="button">
+                <span class="visually-hidden">Вперед</span>
+                <svg aria-hidden="true" focusable="false" width="10" height="10">
+                  <use href="/__spritemap#sprite-swiper-arrow-right"></use>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </section>

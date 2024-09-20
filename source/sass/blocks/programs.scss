@@ -245,75 +245,7 @@
 }
 
 .programs__info-link {
-  display: flex;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  background-color: $color-additional;
-  margin-bottom: 2px;
-  transition: all $trans-default;
-
-  &::after {
-    content: "";
-    display: block;
-    width: 10px;
-    height: 10px;
-    background-color: $color-white;
-    mask-image: url("/__spritemap#sprite-arrow-view");
-    mask-size: 10px 10px;
-    mask-repeat: no-repeat;
-  }
-
-  &:hover {
-    background-color: $color-white;
-
-    &::after {
-      background-color: $color-additional;
-      transform: rotate(45deg);
-    }
-  }
-
-  &:focus,
-  &:focus-visible {
-    outline: none;
-  }
-
-  &:focus-visible {
-    background-color: $color-additional;
-
-    &::after {
-      background-color: $color-white;
-      transform: rotate(45deg);
-    }
-  }
-
-  &:active {
-    background-color: $color-white;
-
-    &::after {
-      background-color: $color-additional;
-      transform: rotate(45deg);
-      opacity: 0.7;
-    }
-  }
-
-  @media (min-width: $tablet-width) {
-    margin-bottom: 0;
-  }
-}
-
-.programs__info-link--disabled,
-.programs__info-link:disabled {
-  background-color: $color-disabled;
-  pointer-events: none;
-
-  &::after {
-    background-color: $color-white;
-    opacity: 0.6;
-  }
+  @include link-inner;
 }
 
 .programs__scrollbar {

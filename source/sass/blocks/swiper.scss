@@ -61,3 +61,8 @@
   background-color: $color-action;
   border: none;
 }
+
+.swiper-grid-column > .swiper-wrapper {
+  flex-wrap: wrap;
+  flex-direction: column;
+}
