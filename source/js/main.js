@@ -3,13 +3,13 @@
 // import {Navigation, Pagination} from "swiper/modules";
 // import 'swiper/css';
 import { initMenu } from './modules/menu.js';
-import { initSwiperHero } from './modules/hero-slider.js';
+import { initSwiperHero } from './modules/slider/hero-slider.js';
 import { initModal } from './modules/modal.js';
 import { setCustomSelect } from './modules/form/custom-select.js';
 import { initPhoneInput } from './modules/form/init-phone.js';
 import { initForm } from './modules/form/validate-form.js';
-import { initSwiperPrograms } from './modules/programs-slider.js';
-import { initSwiperNews } from './modules/news-slider.js';
+import { initSwiperPrograms } from './modules/slider/programs-slider.js';
+import { initSwiperNews } from './modules/slider/news-slider.js';
 
 initMenu();
 initSwiperHero();

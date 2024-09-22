@@ -15,16 +15,24 @@ const initSwiperHero = () => {
 
     // If we need pagination
     // pagination: {
-    //   el: '.swiper-slide-active .swiper-pagination',
+    //   el: '.swiper-slide-active .hero__pagination',
     //   type: 'bullets',
     //   bulletClass: 'hero__pagination-bullet',
     //   bulletActiveClass: 'hero__pagination-bullet--active',
     //   clickable: true,
     // },
 
+    // pagination: {
+    //   el: '.swiper-slide-active .hero__pagination',
+    //   clickable: true,
+    //   bulletElement: 'button type="button" aria-label="Переключить слайд"',
+    // },
+
     pagination: {
       el: '.swiper-slide-active .hero__pagination',
       clickable: true,
+      bulletClass: 'hero__pagination-bullet',
+      bulletActiveClass: 'hero__pagination-bullet--active',
       bulletElement: 'button type="button" aria-label="Переключить слайд"',
     },
 
@@ -32,7 +40,6 @@ const initSwiperHero = () => {
     spaceBetween: 40,
     slidesPerView: 1,
     centeredSlides: false,
-    direction: 'horizontal',
     initialSlide: 0,
     slidesPerGroup: 1,
     loop: true,

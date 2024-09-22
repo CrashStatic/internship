@@ -55,6 +55,10 @@
   }
 }
 
+.hero .hero__pagination-container {
+  max-width: min-content;
+}
+
 .hero .hero__pagination {
   display: flex;
   padding: 10px 16px;
@@ -102,6 +106,8 @@
 }
 
 .hero__pagination-bullet {
+  display: flex;
+  flex-shrink: 0;
   width: 8px;
   height: 8px;
   border: 2px solid $color-additional;
@@ -109,6 +115,7 @@
   background-color: transparent;
   transition: background-color $trans-default;
   cursor: pointer;
+  padding: 0;
 
   &:hover {
     border: 2px solid $color-white;
