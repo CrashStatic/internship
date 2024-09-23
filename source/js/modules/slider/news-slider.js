@@ -83,6 +83,9 @@ const initSwiperNews = () => {
           rows: 2,
           fill: 'row'
         },
+        pagination: {
+          dynamicMainBullets: 4,
+        }
       },
 
       1440: {
@@ -93,6 +96,9 @@ const initSwiperNews = () => {
           rows: 1,
           fill: 'row'
         },
+        pagination: {
+          dynamicMainBullets: 4,
+        }
       }
     },
   });
