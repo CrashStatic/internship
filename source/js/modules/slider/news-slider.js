@@ -33,11 +33,12 @@ const initSwiperNews = () => {
   }
 
   new Swiper('.news__swiper', {
+    modules: [Grid, Pagination],
+
     slidesPerView: 'auto',
     slidesPerGroup: 1,
     spaceBetween: 20,
 
-    modules: [Grid, Pagination],
     grid: {
       rows: 2,
     },
@@ -69,6 +70,7 @@ const initSwiperNews = () => {
     // Responsive breakpoints
     breakpoints: {
       320: {
+        slidesPerView: 1,
         allowTouchMove: true,
         grid: {
           rows: 2,
@@ -79,6 +81,7 @@ const initSwiperNews = () => {
         spaceBetween: 30,
         allowTouchMove: true,
         slidesPerGroup: 2,
+        slidesPerView: 2,
         grid: {
           rows: 2,
           fill: 'row'

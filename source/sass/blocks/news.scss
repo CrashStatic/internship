@@ -6,6 +6,10 @@
     padding-right: 0;
   }
 
+  @media (min-width: $tablet-width) {
+    padding-top: 50px;
+  }
+
   @media (min-width: $desktop-width) {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -14,6 +18,7 @@
 
 .news__title {
   @include title;
+
   text-align: center;
   margin-bottom: 23px;
 
@@ -34,19 +39,25 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  gap: 12px;
+  gap: 7px;
   overflow-x: auto;
   scrollbar-width: none;
   margin-bottom: 24px;
 
   @media (min-width: $tablet-width) {
-    gap: 10px;
+    // gap: 10px;
+    gap: 6px;
     margin-bottom: 30px;
+
+    // margin-left: 2px;
+    margin-left: 1px;
   }
 
   @media (min-width: $desktop-width) {
     justify-content: center;
     margin-bottom: 40px;
+    margin-left: 9px;
+    gap: 2px;
   }
 }
 
@@ -60,7 +71,7 @@
   color: $color-additional;
   text-transform: uppercase;
   background-color: transparent;
-  padding: 12px 13px 12px 15px;
+  padding: 12px 16px 12px 17px;
   border: none;
   cursor: pointer;
   opacity: 0.6;
@@ -75,7 +86,7 @@
   }
 
   &:focus-visible {
-    padding: 12px 13px 12px 15px;
+    padding: 12px 16px 12px 17px;
     opacity: 1;
     background-color: $color-white;
     border: none;
@@ -85,33 +96,49 @@
   @media (min-width: $tablet-width) {
     font-size: 14px;
     line-height: 14px;
-    padding: 16px 22px;
+    padding: 16px 23px 16px 22px;
+
+    &:focus-visible {
+      padding: 16px 23px 16px 22px;
+    }
   }
 
   @media (min-width: $desktop-width) {
-    padding: 16px 26px;
+    padding: 16px 35px;
+
+    &:focus-visible {
+      padding: 16px 35px;
+    }
   }
 }
 
 .news__tab--active {
   border: 2px solid $color-additional;
   border-radius: 20px;
-  padding: 10px 15px 10px 14px;
+  padding: 10px 14px 10px 15px;
   opacity: 1;
   background-color: transparent;
 
   &:focus-visible {
-    padding: 12px 17px 12px 16px;
+    padding: 12px 16px 12px 17px;
   }
 
   @media (min-width: $tablet-width) {
     font-size: 14px;
     line-height: 14px;
-    padding: 14px 20px;
+    padding: 14px 21px 14px 20px;
+
+    &:focus-visible {
+      padding: 16px 23px 16px 22px;
+    }
   }
 
   @media (min-width: $desktop-width) {
-    padding: 14px 24px;
+    padding: 14px 33px;
+
+    &:focus-visible {
+      padding: 16px 35px;
+    }
   }
 }
 
@@ -133,6 +160,7 @@
   }
 
   @media (min-width: $desktop-width) {
+    width: 1240px;
     height: 400px;
     margin-bottom: 40px;
     flex-wrap: nowrap;
@@ -184,6 +212,7 @@
 
     .news__subtitle {
       width: 426px;
+      padding: 18px 18px 6px 0;
     }
 
     .news__description p {
@@ -196,7 +225,10 @@
   height: 100%;
   position: relative;
   display: flex;
-  align-items: end;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  // align-items: end;
 }
 
 .news__image {
@@ -220,8 +252,11 @@
   margin-right: 11px;
   position: relative;
   overflow-y: auto;
+  height: fit-content;
   padding-top: 16px;
   padding-right: 16px;
+  display: flex;
+  flex-direction: column;
 
   @media (min-width: $tablet-width) {
     margin-right: 68px;
@@ -235,6 +270,7 @@
 .news__date {
   display: block;
   width: fit-content;
+  max-width: 150px;
   font-size: 12px;
   line-height: 12px;
   letter-spacing: 0.12px;
@@ -267,6 +303,10 @@
     right: -16px;
     bottom: 0;
   }
+
+  @media (min-width: $tablet-width) {
+    padding: 13px 12px 5px 0;
+  }
 }
 
 .news__subtitle {
@@ -297,14 +337,14 @@
     width: 207px;
     font-size: 20px;
     line-height: 24px;
-    padding: 10px 18px 6px 0;
+    padding: 11px 18px 5px 0;
   }
 
   @media (min-width: $desktop-width) {
     width: 190px;
     font-size: 24px;
     line-height: 26px;
-    padding: 18px 18px 6px 0;
+    padding: 10px 18px 4px 0;
   }
 }
 
@@ -315,6 +355,7 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  position: relative;
 
   p {
     max-width: 213px;
@@ -331,7 +372,7 @@
     height: 16px;
     mask-size: 16px 16px;
     background-color: $color-main;
-    right: 0;
+    right: -16px;
     bottom: 0;
   }
 
@@ -366,6 +407,10 @@
 .news__navigation-prev,
 .news__navigation-next {
   @include swiper-button;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 4px;
+  }
 }
 
 .news__pagination-container {
