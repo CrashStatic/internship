@@ -44,8 +44,6 @@ const initFaqAccordion = () => {
       // currentFaq.classList.remove('faq__item--active');
     }
 
-
-
     window.addEventListener('resize', () => {
       currentContent.style.maxHeight = `${currentContent.scrollHeight}px`;
     });
