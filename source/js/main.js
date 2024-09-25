@@ -10,6 +10,7 @@ import { initPhoneInput } from './modules/form/init-phone.js';
 import { initForm } from './modules/form/validate-form.js';
 import { initSwiperPrograms } from './modules/slider/programs-slider.js';
 import { initSwiperNews } from './modules/slider/news-slider.js';
+import { initFaqAccordion } from './modules/faq.js';
 
 initMenu();
 initSwiperHero();
@@ -19,6 +20,7 @@ initPhoneInput();
 initForm();
 initSwiperPrograms();
 initSwiperNews();
+initFaqAccordion();
 
 // const select = document.querySelector('.modal__select option');
 // const selectItem = document.querySelectorAll('.modal__item-option');
