@@ -223,6 +223,16 @@
   }
 }
 
+.faq__icon--disabled,
+.faq__icon:disabled {
+  background-color: $color-disabled;
+
+  &::before {
+    background-color: $color-white;
+    opacity: 0.6;
+  }
+}
+
 .faq__answer {
   overflow: hidden;
   position: relative;
