@@ -2,7 +2,8 @@ import Swiper from 'swiper/bundle';
 // import 'swiper/css';
 import 'swiper/css/bundle';
 import { Grid, Pagination } from 'swiper/modules';
-// import 'swiper/css/pagination';
+import 'swiper/css/pagination';
+
 
 const ADDITIONAL_PAGES = 3;
 const sliderElement = document.querySelector('.news__wrapper');
@@ -27,7 +28,7 @@ const initSwiperNews = () => {
       renderSlider(sliderElement, slides);
     }
   } else {
-    for (let i = 1; i < ADDITIONAL_PAGES; i++) {
+    for (let i = 1; i <= ADDITIONAL_PAGES; i++) {
       renderSlider(sliderElement, slides);
     }
   }
@@ -35,12 +36,18 @@ const initSwiperNews = () => {
   new Swiper('.news__swiper', {
     modules: [Grid, Pagination],
 
-    slidesPerView: 'auto',
-    slidesPerGroup: 1,
-    spaceBetween: 20,
+    // slidesPerView: 'auto',
+    // slidesPerGroup: 1,
+    // spaceBetween: 20,
+    loop: false,
+
+    // grid: {
+    //   rows: 2,
+    // },
 
     grid: {
       rows: 2,
+      fill: 'column',
     },
 
     // Navigation arrows
@@ -70,7 +77,10 @@ const initSwiperNews = () => {
     // Responsive breakpoints
     breakpoints: {
       320: {
-        slidesPerView: 1,
+        slidesPerView: 'auto',
+        // slidesPerGroup: 1,
+        spaceBetween: 20,
+        // slidesPerView: 1,
         allowTouchMove: true,
         grid: {
           rows: 2,
@@ -94,7 +104,8 @@ const initSwiperNews = () => {
       1440: {
         spaceBetween: 32,
         allowTouchMove: false,
-        slidesPerGroup: 3,
+        // slidesPerGroup: 3,
+        // slidesPerView: 3,
         grid: {
           rows: 1,
           fill: 'row'
@@ -149,12 +160,46 @@ const initSwiperNews = () => {
   // Инициализация позиции пагинации
   // updatePaginationPosition();
 
-  // // Установка высоты для каждого слайда на основе их содержимого
-  // const slides = document.querySelectorAll('.swiper-slide');
-  // slides.forEach((slide) => {
-  //   const height = slide.scrollHeight;
-  //   slide.style.height = `${height}px`;
-  // });
+  // const hidePaginationButton = (button) => {
+  //   button.classList.add('visually-hidden');
+  //   button.style.disable = 'true';
+  //   button.setAttribute('tab-index', '-1');
+  // };
+
+  // const showPaginationButton = (button) => {
+  //   button.classList.remove('visually-hidden');
+  //   button.style.disable = '';
+  //   button.setAttribute('tab-index', '0');
+  // };
+
+  // const newsPagination = document.querySelector('.news__pagination');
+  // const paginationList = newsPagination.children;
+  // const shownButtons = 4;
+  // let firstShownButton = 0;
+  // let lastShownButton = paginationList.length < shownButtons ? paginationList.length : shownButtons - 1;
+
+  // for (let i = shownButtons; i < paginationList.length; i++) {
+  //   hidePaginationButton(paginationList[i]);
+  // }
+
+  // const onSlideChange = () => {
+  //   const currentSlideIndex = swiper.realIndex;
+
+  //   if (currentSlideIndex === firstShownButton && currentSlideIndex !== 0) {
+  //     firstShownButton -= 1;
+  //     showPaginationButton(paginationList[firstShownButton]);
+  //     hidePaginationButton(paginationList[lastShownButton]);
+  //     lastShownButton -= 1;
+  //   }
+  //   if (currentSlideIndex === lastShownButton && currentSlideIndex !== paginationList.length - 1) {
+  //     hidePaginationButton(paginationList[firstShownButton]);
+  //     lastShownButton += 1;
+  //     firstShownButton += 1;
+  //     showPaginationButton(paginationList[lastShownButton]);
+  //   }
+  // };
+
+  // swiper.on('slideChange', onSlideChange);
 };
 
 export { initSwiperNews };
