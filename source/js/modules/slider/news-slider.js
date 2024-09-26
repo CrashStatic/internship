@@ -1,29 +1,18 @@
-import Swiper from 'swiper/bundle';
+import Swiper from 'swiper';
 // import 'swiper/css';
-import 'swiper/css/bundle';
+import 'swiper/css';
 import { Grid, Pagination } from 'swiper/modules';
-import 'swiper/css/pagination';
-
+// import 'swiper/css/pagination';
+import { renderSlider } from '../util';
 
 const ADDITIONAL_PAGES = 3;
 const SHOWNBUTTONS = 4;
 const sliderElement = document.querySelector('.news__wrapper');
-const fragment = document.createDocumentFragment();
 const slides = document.querySelectorAll('.news__slide');
 const newsTabs = document.querySelectorAll('.news__tab');
 const newsPagination = document.querySelector('.news__pagination');
 
 // const newsWrapper = document.querySelector('.news__wrapper');
-
-const renderSlider = (container, slider) => {
-  slider.forEach((slide) => {
-    const doubleSlide = slide.cloneNode(true);
-    fragment.appendChild(doubleSlide);
-  });
-
-  container.appendChild(fragment);
-};
-
 
 const initSwiperNews = () => {
   if (window.innerWidth < 1439) {

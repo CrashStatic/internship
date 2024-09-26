@@ -2,15 +2,16 @@
 // import Swiper from "swiper";
 // import {Navigation, Pagination} from "swiper/modules";
 // import 'swiper/css';
-import { initMenu } from './modules/menu.js';
-import { initSwiperHero } from './modules/slider/hero-slider.js';
-import { initModal } from './modules/modal.js';
-import { setCustomSelect } from './modules/form/custom-select.js';
-import { initPhoneInput } from './modules/form/init-phone.js';
-import { initForm } from './modules/form/validate-form.js';
-import { initSwiperPrograms } from './modules/slider/programs-slider.js';
-import { initSwiperNews } from './modules/slider/news-slider.js';
-import { initFaqAccordion } from './modules/faq.js';
+import { initMenu } from './modules/menu';
+import { initSwiperHero } from './modules/slider/hero-slider';
+import { initModal } from './modules/modal';
+import { setCustomSelect } from './modules/form/custom-select';
+import { initPhoneInput } from './modules/form/init-phone';
+import { initForm } from './modules/form/validate-form';
+import { initSwiperPrograms } from './modules/slider/programs-slider';
+import { initSwiperNews } from './modules/slider/news-slider';
+import { initFaqAccordion } from './modules/faq';
+import { initSwiperReviews } from './modules/slider/reviews-slider';
 
 initMenu();
 initSwiperHero();
@@ -21,6 +22,7 @@ initForm();
 initSwiperPrograms();
 initSwiperNews();
 initFaqAccordion();
+initSwiperReviews();
 
 // const select = document.querySelector('.modal__select option');
 // const selectItem = document.querySelectorAll('.modal__item-option');

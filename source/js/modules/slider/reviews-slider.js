@@ -3,28 +3,28 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { renderSlider } from '../util';
 
-const sliderElement = document.querySelector('.programs__wrapper');
-const slides = document.querySelectorAll('.programs__slide');
+const sliderElement = document.querySelector('.reviews__wrapper');
+const slides = document.querySelectorAll('.reviews__slide');
 
-const initSwiperPrograms = () => {
+const initSwiperReviews = () => {
   if (window.innerWidth > 1439) {
     renderSlider(sliderElement, slides);
   }
 
-  new Swiper('.programs__swiper', {
+  new Swiper('.reviews__swiper', {
 
     // Navigation arrows
     navigation: {
-      nextEl: '.programs__navigation-next',
-      prevEl: '.programs__navigation-prev',
+      nextEl: '.reviews__navigation-next',
+      prevEl: '.reviews__navigation-prev',
     },
 
     // Scrollbar
     scrollbar: {
-      el: '.programs__scrollbar',
+      el: '.reviews__scrollbar',
       horizontalClass: 'slider__scrollbar',
       draggable: true,
-      dragClass: 'programs__drag-element',
+      dragClass: 'reviews__drag-element',
       dragSize: 326,
     },
 
@@ -49,7 +49,7 @@ const initSwiperPrograms = () => {
       },
 
       1440: {
-        slidesPerView: 3,
+        slidesPerView: 'auto',
         spaceBetween: 32,
         allowTouchMove: false,
         scrollbar: {
@@ -61,4 +61,4 @@ const initSwiperPrograms = () => {
   });
 };
 
-export { initSwiperPrograms };
+export { initSwiperReviews };

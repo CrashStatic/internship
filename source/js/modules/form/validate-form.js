@@ -1,4 +1,4 @@
-import { phoneInput } from './init-phone.js';
+import { phoneInput } from './init-phone';
 // const placeSelect = document.querySelector('.form__input--place');
 // const placeInput = document.querySelector('.form__input--place');
 // const placeInput = document.querySelector('.form__input--place');

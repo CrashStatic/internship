@@ -48,10 +48,10 @@
 
 .hero__container {
   z-index: 2;
-  margin: 80px auto 20px;
+  margin: 120px auto 20px;
 
   @media (min-width: $tablet-width) {
-    margin: 90px auto 60px;
+    margin: 130px auto 60px;
   }
 }
 
@@ -302,6 +302,7 @@
     padding: unset;
     border-radius: unset;
     width: 285px;
+    flex-shrink: 0;
 
     &::after {
       display: none;

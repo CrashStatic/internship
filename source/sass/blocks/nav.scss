@@ -251,6 +251,7 @@
     background-repeat: no-repeat;
     transform: rotate(180deg);
     transition: transform $trans-default;
+    flex-shrink: 0;
   }
 }
 

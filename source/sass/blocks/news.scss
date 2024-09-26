@@ -403,6 +403,10 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: $mobile-width) {
+    padding-right: 15px;
+  }
 }
 
 .news__navigation-prev,
@@ -449,12 +453,15 @@
 //   }
 // }
 
-.news__pagination {
+.news .news__pagination {
   display: flex;
   width: 152px;
   gap: 16px;
   justify-content: center;
-  position: absolute;
+
+  // position: absolute;
+  transform: none;
+
   --swiper-pagination-bottom: 0;
 }
 
