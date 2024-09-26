@@ -402,6 +402,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .news__navigation-prev,
@@ -413,76 +414,127 @@
   }
 }
 
-.news__pagination-container {
-  display: flex;
-  width: 152px;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-  height: 26px;
-
-  @media (min-width: $tablet-width) {
-    // width: 188px;
-    width: 250px;
-    height: 32px;
-  }
-}
-
-.news .news__pagination {
-  --swiper-pagination-bullet-horizontal-gap: 8px;
-  --swiper-pagination-bottom: 0;
-
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  position: absolute;
-
-  @media (min-width: $tablet-width) {
-    --swiper-pagination-bullet-horizontal-gap: 10px;
-
-    // justify-content: center;
-  }
-
-  @media (min-width: $desktop-width) {
-    justify-content: unset;
-  }
-}
-
-// .news__pagination {
+// .news__pagination-container {
 //   display: flex;
 //   width: 152px;
-//   gap: 16px;
-//   justify-content: center;
-// }
-
-// .news__pagination-button {
-//   display: flex;
-//   width: 26px;
+//   margin: 0 auto;
+//   overflow: hidden;
+//   position: relative;
 //   height: 26px;
-//   font-size: 14px;
-//   line-height: 14px;
-//   font-weight: 400;
-//   color: $color-additional;
-//   border-radius: 50%;
-//   opacity: 0.5;
-//   align-items: center;
-//   justify-content: center;
-//   background-color: transparent;
-//   border: none;
-//   transition: all $trans-default;
-//   flex-shrink: 0;
-
-//   &--active {
-//     background-color: $color-additional;
-//     color: $color-white;
-//     font-weight: 500;
-//     opacity: 1;
-//   }
 
 //   @media (min-width: $tablet-width) {
-//     width: 32px;
+//     // width: 188px;
+//     width: 250px;
 //     height: 32px;
-//     font-size: 16px;
-//     line-height: 20px;
 //   }
 // }
+
+// .news .news__pagination {
+//   --swiper-pagination-bullet-horizontal-gap: 8px;
+//   --swiper-pagination-bottom: 0;
+
+//   display: flex;
+//   justify-content: center;
+//   overflow: hidden;
+//   position: absolute;
+
+//   @media (min-width: $tablet-width) {
+//     --swiper-pagination-bullet-horizontal-gap: 10px;
+
+//     // justify-content: center;
+//   }
+
+//   @media (min-width: $desktop-width) {
+//     justify-content: unset;
+//   }
+// }
+
+.news__pagination {
+  display: flex;
+  width: 152px;
+  gap: 16px;
+  justify-content: center;
+  position: absolute;
+  --swiper-pagination-bottom: 0;
+}
+
+.news__pagination-button {
+  display: flex;
+  width: 26px;
+  height: 26px;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  color: $color-additional;
+  border-radius: 50%;
+  opacity: 0.5;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &:hover {
+    opacity: 1;
+    border: 2px solid $color-additional;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible {
+    opacity: 1;
+    border: 2px solid $color-additional;
+    background-color: $color-white;
+  }
+
+  &:active {
+    opacity: 1;
+    border: 2px solid $color-action;
+    background-color: $color-action;
+    color: $color-white;
+  }
+}
+
+.news__pagination-button--active {
+  background-color: $color-additional;
+  color: $color-white;
+  font-weight: 500;
+  opacity: 1;
+
+  &:hover {
+    opacity: 1;
+    border: 2px solid $color-additional;
+    background-color: transparent;
+    color: $color-additional;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible {
+    opacity: 1;
+    border: 2px solid $color-additional;
+    background-color: $color-white;
+    color: $color-additional;
+  }
+
+  &:active {
+    opacity: 1;
+    border: 2px solid $color-action;
+    background-color: $color-action;
+    color: $color-white;
+  }
+}

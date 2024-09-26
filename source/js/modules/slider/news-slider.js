@@ -6,10 +6,13 @@ import 'swiper/css/pagination';
 
 
 const ADDITIONAL_PAGES = 3;
+const SHOWNBUTTONS = 4;
 const sliderElement = document.querySelector('.news__wrapper');
 const fragment = document.createDocumentFragment();
 const slides = document.querySelectorAll('.news__slide');
 const newsTabs = document.querySelectorAll('.news__tab');
+const newsPagination = document.querySelector('.news__pagination');
+
 // const newsWrapper = document.querySelector('.news__wrapper');
 
 const renderSlider = (container, slider) => {
@@ -33,7 +36,7 @@ const initSwiperNews = () => {
     }
   }
 
-  new Swiper('.news__swiper', {
+  const newsSwiper = () => new Swiper('.news__swiper', {
     modules: [Grid, Pagination],
 
     // slidesPerView: 'auto',
@@ -61,17 +64,17 @@ const initSwiperNews = () => {
       el: '.news__pagination',
       dynamicBullets: true,
       dynamicMainBullets: 3,
-      // bulletClass: 'news__pagination-button',
-      // bulletActiveClass: 'news__pagination-button--active',
+      bulletClass: 'news__pagination-button',
+      bulletActiveClass: 'news__pagination-button--active',
       clickable: true,
       renderBullet: (index, className) => `<button class="${className}">${index + 1}</button>`,
     },
 
-    // on: {
-    //   slideChange: function () {
-    //     updatePaginationPosition();
-    //   },
-    // },
+    on: {
+      slideChange: function () {
+        onSlideChange();
+      },
+    },
 
 
     // Responsive breakpoints
@@ -140,66 +143,44 @@ const initSwiperNews = () => {
     });
   });
 
-  // function updatePaginationPosition() {
-  //   const bullets = document.querySelectorAll('.news__pagination-button');
-  //   const activeIndex = swiper.activeIndex % bullets.length; // Получаем индекс активного слайда
-  //   const activeBullet = bullets[activeIndex];
+  const newsSlider = newsSwiper();
 
-  //   // Сдвигаем пагинацию под активный слайд
-  //   const bulletWidth = activeBullet.offsetWidth;
-  //   const bulletOffset = activeBullet.offsetLeft;
+  const hideBullet = (button) => {
+    button.classList.add('visually-hidden');
+    button.style.disable = 'true';
+    button.setAttribute('tab-index', '-1');
+  };
 
-  //   // Применяем стили для сдвига
+  const showBullet = (button) => {
+    button.classList.remove('visually-hidden');
+    button.style.disable = '';
+    button.setAttribute('tab-index', '0');
+  };
 
-  //   if (swiper.activeIndex > 4) {
-  //     document.querySelector('.news__pagination-inner').style.transform = `translateX(-${bulletOffset}px)`;
+  const paginationList = newsPagination.children;
+  let firstButton = 0;
+  let lastButton = paginationList.length < SHOWNBUTTONS ? paginationList.length : SHOWNBUTTONS - 1;
 
-  //   }
-  // }
+  for (let i = SHOWNBUTTONS; i < paginationList.length; i++) {
+    hideBullet(paginationList[i]);
+  }
 
-  // Инициализация позиции пагинации
-  // updatePaginationPosition();
+  function onSlideChange () {
+    const currentSlideIndex = newsSlider.realIndex;
 
-  // const hidePaginationButton = (button) => {
-  //   button.classList.add('visually-hidden');
-  //   button.style.disable = 'true';
-  //   button.setAttribute('tab-index', '-1');
-  // };
-
-  // const showPaginationButton = (button) => {
-  //   button.classList.remove('visually-hidden');
-  //   button.style.disable = '';
-  //   button.setAttribute('tab-index', '0');
-  // };
-
-  // const newsPagination = document.querySelector('.news__pagination');
-  // const paginationList = newsPagination.children;
-  // const shownButtons = 4;
-  // let firstShownButton = 0;
-  // let lastShownButton = paginationList.length < shownButtons ? paginationList.length : shownButtons - 1;
-
-  // for (let i = shownButtons; i < paginationList.length; i++) {
-  //   hidePaginationButton(paginationList[i]);
-  // }
-
-  // const onSlideChange = () => {
-  //   const currentSlideIndex = swiper.realIndex;
-
-  //   if (currentSlideIndex === firstShownButton && currentSlideIndex !== 0) {
-  //     firstShownButton -= 1;
-  //     showPaginationButton(paginationList[firstShownButton]);
-  //     hidePaginationButton(paginationList[lastShownButton]);
-  //     lastShownButton -= 1;
-  //   }
-  //   if (currentSlideIndex === lastShownButton && currentSlideIndex !== paginationList.length - 1) {
-  //     hidePaginationButton(paginationList[firstShownButton]);
-  //     lastShownButton += 1;
-  //     firstShownButton += 1;
-  //     showPaginationButton(paginationList[lastShownButton]);
-  //   }
-  // };
-
-  // swiper.on('slideChange', onSlideChange);
+    if (currentSlideIndex === firstButton && currentSlideIndex !== 0) {
+      firstButton--;
+      showBullet(paginationList[firstButton]);
+      hideBullet(paginationList[lastButton]);
+      lastButton--;
+    }
+    if (currentSlideIndex === lastButton && currentSlideIndex !== paginationList.length - 1) {
+      hideBullet(paginationList[firstButton]);
+      firstButton++;
+      lastButton++;
+      showBullet(paginationList[lastButton]);
+    }
+  }
 };
 
 export { initSwiperNews };
