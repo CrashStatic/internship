@@ -5,6 +5,7 @@ const setCustomSelect = () => {
   customSelect.setAttribute('class', 'form__input form__input--place');
   customSelect.setAttribute('tabindex', '0');
   customSelect.setAttribute('readonly', 'true');
+  customSelect.setAttribute('required', 'true');
   // customSelect.setAttribute('value', '');
 
   customSelect.setAttribute('required', '');
@@ -13,10 +14,11 @@ const setCustomSelect = () => {
 
   const optionsContainer = document.createElement('div');
   optionsContainer.setAttribute('class', 'form__select-items');
+  optionsContainer.setAttribute('required', 'true');
 
   for (let i = 0; i < selectElement.length; i++) {
     const optionDiv = document.createElement('div');
-    // optionDiv.setAttribute('required', 'true');
+    optionDiv.setAttribute('required', 'true');
 
     // optionDiv.setAttribute('class', 'form__div');
 

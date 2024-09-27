@@ -1,7 +1,7 @@
 import { initPhoneInput, phoneInput } from './init-phone';
 const VALID_NAME = /^[А-ЯA-Z][А-Яа-яA-Za-z\s]*$/;
 // const VALID_NUMBER = /^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$/;
-const VALID_NUMBER = /[+][7][\d ()-]{12,16}/gu;
+const VALID_NUMBER = /[+][7][\d ()-]{12}/gu;
 // const VALID_NUMBER = /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d\- ]{12,16}$/;
 // const VALID_NUMBER = /^((\+7|7|8)+([0-9]){12})$/;
 // const placeSelect = document.querySelector('.form__input--place');
@@ -46,7 +46,7 @@ const chekedPhone = (input) => {
 
   if (!VALID_NUMBER.test(phoneValue)) {
     input.classList.add('form__input--error');
-    input.setCustomValidity('Введите номер телефона в формате +7 777 777 77 77');
+    input.setCustomValidity('Введите номер телефона в формате +7 777 7777777');
     input.reportValidity();
     return false;
   } else {

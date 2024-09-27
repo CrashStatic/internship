@@ -3,6 +3,7 @@ const modalOpenBtn = document.querySelector('.about__button');
 const aboutSection = document.querySelector('.about');
 const modalCloseBtn = document.querySelector('.modal__close-button');
 const overlay = document.querySelector('.modal__overlay');
+const modalForm = document.querySelector('.modal__form');
 
 const initModal = () => {
   if (!modal) {
@@ -23,6 +24,7 @@ const initModal = () => {
     modal.classList.remove('modal--opened');
     aboutSection.scrollIntoView();
     overlay.style.display = 'none';
+    modalForm.reset();
   }
 };
 
