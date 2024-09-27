@@ -5,10 +5,10 @@ const setCustomSelect = () => {
   customSelect.setAttribute('class', 'form__input form__input--place');
   customSelect.setAttribute('tabindex', '0');
   customSelect.setAttribute('readonly', 'true');
-  customSelect.setAttribute('required', 'true');
+  // customSelect.setAttribute('required', '');
   // customSelect.setAttribute('value', '');
 
-  customSelect.setAttribute('required', '');
+  customSelect.setAttribute('required', 'true');
 
   customSelect.innerHTML = selectElement.options[selectElement.selectedIndex].innerHTML;
 
@@ -18,7 +18,7 @@ const setCustomSelect = () => {
 
   for (let i = 0; i < selectElement.length; i++) {
     const optionDiv = document.createElement('div');
-    optionDiv.setAttribute('required', 'true');
+    // optionDiv.setAttribute('required', 'true');
 
     // optionDiv.setAttribute('class', 'form__div');
 
@@ -28,6 +28,7 @@ const setCustomSelect = () => {
       selectElement.selectedIndex = i;
       customSelect.innerHTML = this.innerHTML;
       customSelect.value = this.innerHTML;
+      // customSelect.setAttribute('data-value', `${this.innerHTML}`);
       closeAllSelect();
     });
 
@@ -94,6 +95,21 @@ const setCustomSelect = () => {
   }
 
   document.addEventListener('click', closeAllSelect);
+
+
+  // document.querySelector('.form__input--place').addEventListener('click', function() {
+  //   this.nextElementSibling.classList.toggle('show');
+  // });
+
+  // document.querySelectorAll('.form__select-items div').forEach((option) => {
+  //   option.addEventListener('click', function() {
+  //     const select = document.getElementById('place');
+  //     select.value = this.getAttribute('data-value');
+  //     document.querySelector('.form__input--place').textContent = this.textContent;
+  //     // this.parentNode.classList.remove('show');
+  //   });
+  // });
+
 };
 
 export { setCustomSelect };

@@ -1,26 +1,15 @@
 import { initPhoneInput, phoneInput } from './init-phone';
 const VALID_NAME = /^[А-ЯA-Z][А-Яа-яA-Za-z\s]*$/;
-// const VALID_NUMBER = /^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$/;
 const VALID_NUMBER = /[+][7][\d ()-]{12}/gu;
-// const VALID_NUMBER = /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d\- ]{12,16}$/;
-// const VALID_NUMBER = /^((\+7|7|8)+([0-9]){12})$/;
-// const placeSelect = document.querySelector('.form__input--place');
-// const placeInput = document.querySelector('.form__input--place');
+// const placeSelect = document.querySelector('.form__custom-select select');
 // const placeInput = document.querySelector('.form__input--place');
 const nameInput = document.getElementById('name');
 // const phoneInput = document.querySelector('.form__input--phone');
 // const checkboxInput = document.querySelector('.form__checkbox-input');
 
-// const baseCountryCode = '+7';
-// const baseMatrix = ' (___) ___-__-__';
-// const phoneLength = baseCountryCode.length + baseMatrix.length;
-// const phoneLength = 10;
-
-
 const form = document.querySelector('.form');
 const inputs = form.querySelectorAll('input');
 
-// const newPhone = initPhoneInput();
 
 const chekedName = (input) => {
   const nameValue = input.value;
@@ -39,10 +28,6 @@ const chekedName = (input) => {
 
 const chekedPhone = (input) => {
   const phoneValue = input.value;
-
-  // if (!(input.value = phoneInput)) {
-  //   input.classList.add('form__input--error');
-  // }
 
   if (!VALID_NUMBER.test(phoneValue)) {
     input.classList.add('form__input--error');
@@ -84,6 +69,7 @@ const initForm = () => {
   //   // phoneInput.reportValidity();
   // });
 
+  //Добавляем ошибки для невалидных полей
   inputs.forEach((input) => {
     input.addEventListener('invalid', () => {
       input.classList.add('form__input--error');
@@ -176,64 +162,6 @@ const initForm = () => {
       }
     }
 
-
-    // Проверяем, что номер пользователя содержит нужное количество цифр
-    // if (!(userPhone.length === phoneLength)) {
-    //   phoneInput.classList.add('form__input--error');
-    //   // phoneInput.setAttribute('invalid', 'true');
-    //   // phoneInput.setAttribute('required', 'true');
-    //   // phoneInput.setCustomValidity('Неполный номер телефона');
-    // } else {
-    //   phoneInput.classList.remove('form__input--error');
-    // }
-
-    // userPhone.addEventListener('invalid', () => {
-    //   form.classList.add('form--error');
-    // });
-
-    // if (!userName) {
-    //   nameInput.classList.add('form__input--error');
-    //   // phoneInput.setCustomValidity('Неполный номер телефона');
-    // } else {
-    //   nameInput.classList.remove('form__input--error');
-    // }
-
-    // if (!userPhone) {
-    //   phoneInput.classList.add('form__input--error');
-    //   // phoneInput.setCustomValidity('Неполный номер телефона');
-    // } else {
-    //   phoneInput.classList.remove('form__input--error');
-    // }
-
-    // if (!userPlace) {
-    //   placeSelect.classList.add('form__input--error');
-    //   // phoneInput.setCustomValidity('Неполный номер телефона');
-    // } else {
-    //   placeSelect.classList.remove('form__input--error');
-    // }
-
-    // if (!userCheckbox) {
-    //   checkboxInput.classList.add('form__input--error-checkbox');
-    //   // phoneInput.setCustomValidity('Неполный номер телефона');
-    // } else {
-    //   checkboxInput.classList.remove('form__input--error-checkbox');
-    // }
-
-    // phoneInput.addEventListener('invalid', (event) => {
-    //   // Предотвращение стандартного сообщения об ошибке
-    //   event.preventDefault();
-
-    //   // Проверка, если поле пустое
-    //   if (!(userPhone.length === phoneLength)) {
-    //     phoneInput.classList.add('form__input--error');
-    //     // phoneInput.setAttribute('invalid', 'true');
-    //     // phoneInput.setAttribute('required', 'true');
-    //     // phoneInput.setCustomValidity('Неполный номер телефона');
-    //   } else {
-    //     phoneInput.classList.remove('form__input--error');
-    //   }
-    // });
-
     //Прописываем условия валидности формы
     const validForm = !phoneInput.classList.contains('form__input--error') && !nameInput.classList.contains('form__input--error');
 
@@ -242,13 +170,6 @@ const initForm = () => {
       form.submit();
       form.reset();
     }
-
-    // if (validForm) {
-    //   form.submit();
-    //   form.reset();
-    // } else {
-    //   form.classList.add('form--error');
-    // }
   });
 };
 
