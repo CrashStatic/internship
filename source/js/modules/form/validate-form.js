@@ -1,25 +1,70 @@
-import { phoneInput } from './init-phone';
+import { initPhoneInput, phoneInput } from './init-phone';
+const VALID_NAME = /^[А-ЯA-Z][А-Яа-яA-Za-z\s]*$/;
+// const VALID_NUMBER = /^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$/;
+const VALID_NUMBER = /[+][7][\d ()-]{12,16}/gu;
+// const VALID_NUMBER = /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d\- ]{12,16}$/;
+// const VALID_NUMBER = /^((\+7|7|8)+([0-9]){12})$/;
 // const placeSelect = document.querySelector('.form__input--place');
 // const placeInput = document.querySelector('.form__input--place');
 // const placeInput = document.querySelector('.form__input--place');
 const nameInput = document.getElementById('name');
+// const phoneInput = document.querySelector('.form__input--phone');
 // const checkboxInput = document.querySelector('.form__checkbox-input');
 
-const baseCountryCode = '+7';
-const baseMatrix = ' (___) ___-__-__';
-const phoneLength = baseCountryCode.length + baseMatrix.length;
-// const phoneLength = 18;
+// const baseCountryCode = '+7';
+// const baseMatrix = ' (___) ___-__-__';
+// const phoneLength = baseCountryCode.length + baseMatrix.length;
+// const phoneLength = 10;
 
 
 const form = document.querySelector('.form');
 const inputs = form.querySelectorAll('input');
+
+// const newPhone = initPhoneInput();
+
+const chekedName = (input) => {
+  const nameValue = input.value;
+
+  if (!VALID_NAME.test(nameValue)) {
+    input.classList.add('form__input--error');
+    input.setCustomValidity('Введите имя, начинающееся с заглавной буквы');
+    input.reportValidity();
+    return false;
+  } else {
+    input.classList.remove('form__input--error');
+    input.setCustomValidity('');
+    return true;
+  }
+};
+
+const chekedPhone = (input) => {
+  const phoneValue = input.value;
+
+  // if (!(input.value = phoneInput)) {
+  //   input.classList.add('form__input--error');
+  // }
+
+  if (!VALID_NUMBER.test(phoneValue)) {
+    input.classList.add('form__input--error');
+    input.setCustomValidity('Введите номер телефона в формате +7 777 777 77 77');
+    input.reportValidity();
+    return false;
+  } else {
+    input.classList.remove('form__input--error');
+    input.setCustomValidity('');
+    return true;
+  }
+};
 
 const initForm = () => {
   if (!form) {
     return;
   }
 
-  const userPhone = phoneInput.value;
+  initPhoneInput(phoneInput);
+
+  // const userPhone = phoneInput.value;
+  // const userName = nameInput.value;
 
   // phoneInput.addEventListener('invalid', (evt) => {
   //   // // Предотвращение стандартного сообщения об ошибке
@@ -76,32 +121,61 @@ const initForm = () => {
     // chekedInput(userPhone);
     // chekedInput(userName);
 
-    const resetInput = (input) => {
-      input.classList.remove('form__input--error');
-      // input.value = '';
-    };
+    // const resetInput = (input) => {
+    //   input.classList.remove('form__input--error');
+    // };
 
     phoneInput.addEventListener('input', () => {
-      if (phoneInput.value.length) {
-        resetInput(phoneInput);
-      }
+      // if (phoneInput.value.length) {
+      //   resetInput(phoneInput);
+      // }
+      phoneInput.classList.remove('form__input--error');
+      phoneInput.setCustomValidity('');
+      initPhoneInput(phoneInput);
+      onInputChange(phoneInput);
     });
 
-    phoneInput.addEventListener('click', () => {
-      if (phoneInput.value.length) {
-        resetInput(phoneInput);
-      }
-    });
-
-    // function customValidation(input) {
-    //   if (input.value.length < 5) {
-    //     input.setCustomValidity('Должно быть не менее 5 символов.');
-    //   } else {
-    //     input.setCustomValidity('');
+    // phoneInput.addEventListener('click', () => {
+    //   if (phoneInput.value.length) {
+    //     resetInput(phoneInput);
     //   }
-    // }
+    // });
+
+    nameInput.addEventListener('input', () => {
+      onInputChange(nameInput);
+    });
 
     // phoneInput.addEventListener('input', () => customValidation(phoneInput));
+
+    // Проверяем, что номер пользователя верный
+    if (!chekedPhone(phoneInput)) {
+      phoneInput.classList.add('form__input--error');
+    } else {
+      phoneInput.classList.remove('form__input--error');
+    }
+
+    // Проверяем, что имя верно
+    if (!chekedName(nameInput)) {
+      nameInput.classList.add('form__input--error');
+    } else {
+      nameInput.classList.remove('form__input--error');
+    }
+
+    function onInputChange (input) {
+      if (input.value.trim() === '') {
+        input.classList.remove('form__input--error');
+        input.setCustomValidity('');
+      } else {
+        if (input.classList.contains('form__input--error')) {
+          if (nameInput) {
+            chekedName(input);
+          } else if (phoneInput) {
+            chekedPhone(input);
+          }
+        }
+      }
+    }
+
 
     // Проверяем, что номер пользователя содержит нужное количество цифр
     // if (!(userPhone.length === phoneLength)) {
