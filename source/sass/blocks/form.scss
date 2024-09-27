@@ -105,8 +105,44 @@
   padding: 6px 4px;
   border-radius: 2px;
   background-color: $color-additional;
+  border: 1px solid transparent;
   appearance: unset;
   flex-shrink: 0;
+  cursor: pointer;
+}
+
+.form__checkbox-input--modal {
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border: 1px solid $color-additional;
+    background-color: transparent;
+  }
+
+  &:disabled {
+    border: 1px solid $color-additional;
+    background-color: hsla(215, 60%, 48%, 0.6);
+  }
+}
+
+.form__checkbox-input--modal:hover:checked::after,
+.form__checkbox-input--modal:focus-visible:checked::after {
+  background-color: $color-additional;
+  border: 1px solid $color-additional;
+}
+
+.form__checkbox-input--modal:disabled:checked {
+  background-color: $color-checkbox-disabled;
+  border: 1px solid transparent;
+
+  &::after {
+    background-color: $color-white;
+    opacity: 0.7;
+  }
 }
 
 .form__checkbox-label {
