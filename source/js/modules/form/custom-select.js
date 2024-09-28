@@ -4,9 +4,9 @@ const label = document.querySelector('.form__label');
 // const labelSelect = label.cloneNode(true);
 // labelSelect.textContent = 'Выберите город';
 
-const setCustomSelect = (container) => {
+const setCustomSelect = (inputClass, labelClass, container) => {
   const customSelect = document.createElement('input');
-  customSelect.setAttribute('class', 'form__input form__input--place');
+  customSelect.setAttribute('class', `${inputClass}`);
   customSelect.setAttribute('tabindex', '0');
   customSelect.setAttribute('readonly', 'true');
   // customSelect.setAttribute('required', '');
@@ -79,6 +79,7 @@ const setCustomSelect = (container) => {
   });
 
   const labelSelect = label.cloneNode(true);
+  labelSelect.classList.add(`${labelClass}`);
   labelSelect.textContent = 'Выберите город';
 
   container.appendChild(customSelect);

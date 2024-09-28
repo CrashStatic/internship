@@ -133,3 +133,65 @@
     }
   }
 }
+
+.button--secondary {
+  border: 1px solid $color-white;
+  color: $color-white;
+
+  &::after {
+    background-color: $color-white;
+  }
+
+  &::before {
+    background-color: $color-additional;
+  }
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-additional;
+
+    &::after {
+      background-color: $color-additional;
+    }
+
+    &::before {
+      background-color: $color-white;
+      transform: rotate(45deg);
+      top: unset;
+    }
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible {
+    background-color: transparent;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-white;
+    }
+
+    &::before {
+      background-color: $color-additional;
+      transform: rotate(45deg);
+      top: unset;
+    }
+  }
+
+  &:active {
+    background-color: $color-white;
+    color: hsla(215, 60%, 48%, 0.7);
+
+    &::after {
+      background-color: $color-additional;
+    }
+
+    &::before {
+      background-color: $color-white;
+      opacity: 0.7;
+    }
+  }
+}

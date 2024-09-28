@@ -1,6 +1,9 @@
 import { setCustomSelect } from './form/custom-select';
 import { initForm } from './form/validate-form';
 
+const SETINPUTCLASS = 'form__input form__input--main form__input--place-main';
+const LABELCLASS = 'form__label--main';
+
 const selectContainer = document.querySelector('.form__custom-select--main');
 const form = document.querySelector('.form__form');
 const inputs = form.querySelectorAll('input');
@@ -18,7 +21,7 @@ const initMainForm = () => {
     messageArea.classList.remove('form__input--error');
   });
 
-  setCustomSelect(selectContainer);
+  setCustomSelect(SETINPUTCLASS, LABELCLASS, selectContainer);
   initForm(form, inputs, nameInput, phoneInput);
 };
 

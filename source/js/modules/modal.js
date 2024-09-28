@@ -1,6 +1,9 @@
 import { setCustomSelect } from './form/custom-select';
 import { initForm } from './form/validate-form';
 
+const SETINPUTCLASS = 'form__input form__input--modal form__input--place';
+const LABELCLASS = 'form__label--modal';
+
 const modal = document.querySelector('.modal');
 const modalOpenBtn = document.querySelector('.about__button');
 const aboutSection = document.querySelector('.about');
@@ -35,7 +38,7 @@ const initModal = () => {
     modalForm.reset();
   }
 
-  setCustomSelect(selectContainer);
+  setCustomSelect(SETINPUTCLASS, LABELCLASS, selectContainer);
   initForm(form, inputs, nameInput, phoneInput);
 };
 
