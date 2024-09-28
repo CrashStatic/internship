@@ -1,6 +1,6 @@
 const selectElement = document.getElementById('place');
 
-const setCustomSelect = () => {
+const setCustomSelect = (container) => {
   const customSelect = document.createElement('input');
   customSelect.setAttribute('class', 'form__input form__input--place');
   customSelect.setAttribute('tabindex', '0');
@@ -74,8 +74,8 @@ const setCustomSelect = () => {
     // optionsContainer.classList.toggle('select-items--opened');
   });
 
-  document.querySelector('.form__custom-select').appendChild(customSelect);
-  document.querySelector('.form__custom-select').appendChild(optionsContainer);
+  container.appendChild(customSelect);
+  container.appendChild(optionsContainer);
 
   // const isEnterKey = (evt) => evt.key === 'Enter';
 

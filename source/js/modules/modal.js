@@ -1,9 +1,12 @@
+import { setCustomSelect } from './form/custom-select';
+
 const modal = document.querySelector('.modal');
 const modalOpenBtn = document.querySelector('.about__button');
 const aboutSection = document.querySelector('.about');
 const modalCloseBtn = document.querySelector('.modal__close-button');
 const overlay = document.querySelector('.modal__overlay');
 const modalForm = document.querySelector('.modal__form');
+const selectContainer = document.querySelector('.form__custom-select--modal');
 
 const initModal = () => {
   if (!modal) {
@@ -26,6 +29,8 @@ const initModal = () => {
     overlay.style.display = 'none';
     modalForm.reset();
   }
+
+  setCustomSelect(selectContainer);
 };
 
 export { initModal };

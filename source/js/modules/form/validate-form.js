@@ -1,15 +1,10 @@
 import { initPhoneInput, phoneInput } from './init-phone';
 const VALID_NAME = /^[А-ЯA-Z][А-Яа-яA-Za-z\s]*$/;
 const VALID_NUMBER = /[+][7][\d ()-]{12}/gu;
-// const placeSelect = document.querySelector('.form__custom-select select');
-// const placeInput = document.querySelector('.form__input--place');
 const nameInput = document.getElementById('name');
-// const phoneInput = document.querySelector('.form__input--phone');
-// const checkboxInput = document.querySelector('.form__checkbox-input');
 
 const form = document.querySelector('.form');
 const inputs = form.querySelectorAll('input');
-
 
 const chekedName = (input) => {
   const nameValue = input.value;
@@ -48,27 +43,6 @@ const initForm = () => {
 
   initPhoneInput(phoneInput);
 
-  // const userPhone = phoneInput.value;
-  // const userName = nameInput.value;
-
-  // phoneInput.addEventListener('invalid', (evt) => {
-  //   // // Предотвращение стандартного сообщения об ошибке
-  //   // event.preventDefault();
-
-  //   // Проверка длины номера телефона
-  //   if (!(evt.length === phoneLength)) {
-  //     phoneInput.classList.add('form__input--error');
-  //     phoneInput.setCustomValidity('Телефон указан неверно');
-  //     // phoneInput.setAttribute('invalid', 'true');
-  //     // phoneInput.setAttribute('required', 'true');
-  //     // phoneInput.setCustomValidity('Неполный номер телефона');
-  //   } else {
-  //     phoneInput.setCustomValidity('Имя пользователя не соответствует требованиям.');
-  //   }
-
-  //   // phoneInput.reportValidity();
-  // });
-
   //Добавляем ошибки для невалидных полей
   inputs.forEach((input) => {
     input.addEventListener('invalid', () => {
@@ -83,55 +57,16 @@ const initForm = () => {
   form.addEventListener('submit', (evt) => {
     evt.preventDefault();
 
-    //Получаем значения полей ввода
-    // const userPhone = phoneInput.value;
-    // const userPlace = placeSelect.value;
-    // const userName = nameInput.value;
-    // const userCheckbox = checkboxInput.value;
-
-    // //Проверяем длину номера телефона
-    // const chekedNumber = () => {
-    //   if(userPhone.length === phoneLength) {
-    //     input.classList.remove('form__input--invalid');
-    //   }
-    // }
-
-    // Проверяем, что поля заполнены
-    // const chekedInput = (input) => {
-    //   if (!userPhone || !userPlace || !userName) {
-    //     input.classList.add('form__input--error');
-    //   }
-    // };
-
-    // chekedInput(placeInput);
-    // chekedInput(userPhone);
-    // chekedInput(userName);
-
-    // const resetInput = (input) => {
-    //   input.classList.remove('form__input--error');
-    // };
-
     phoneInput.addEventListener('input', () => {
-      // if (phoneInput.value.length) {
-      //   resetInput(phoneInput);
-      // }
       phoneInput.classList.remove('form__input--error');
       phoneInput.setCustomValidity('');
       initPhoneInput(phoneInput);
       onInputChange(phoneInput);
     });
 
-    // phoneInput.addEventListener('click', () => {
-    //   if (phoneInput.value.length) {
-    //     resetInput(phoneInput);
-    //   }
-    // });
-
     nameInput.addEventListener('input', () => {
       onInputChange(nameInput);
     });
-
-    // phoneInput.addEventListener('input', () => customValidation(phoneInput));
 
     // Проверяем, что номер пользователя верный
     if (!chekedPhone(phoneInput)) {
