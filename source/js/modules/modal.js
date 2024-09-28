@@ -1,4 +1,5 @@
 import { setCustomSelect } from './form/custom-select';
+import { initForm } from './form/validate-form';
 
 const modal = document.querySelector('.modal');
 const modalOpenBtn = document.querySelector('.about__button');
@@ -7,6 +8,10 @@ const modalCloseBtn = document.querySelector('.modal__close-button');
 const overlay = document.querySelector('.modal__overlay');
 const modalForm = document.querySelector('.modal__form');
 const selectContainer = document.querySelector('.form__custom-select--modal');
+const form = document.querySelector('.modal__form');
+const inputs = form.querySelectorAll('input');
+const nameInput = form.querySelector('.form__input--name');
+const phoneInput = form.querySelector('.form__input--phone');
 
 const initModal = () => {
   if (!modal) {
@@ -31,6 +36,7 @@ const initModal = () => {
   }
 
   setCustomSelect(selectContainer);
+  initForm(form, inputs, nameInput, phoneInput);
 };
 
 export { initModal };

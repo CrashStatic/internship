@@ -1,4 +1,8 @@
 const selectElement = document.getElementById('place');
+const fragment = document.createDocumentFragment();
+const label = document.querySelector('.form__label');
+// const labelSelect = label.cloneNode(true);
+// labelSelect.textContent = 'Выберите город';
 
 const setCustomSelect = (container) => {
   const customSelect = document.createElement('input');
@@ -74,8 +78,13 @@ const setCustomSelect = (container) => {
     // optionsContainer.classList.toggle('select-items--opened');
   });
 
+  const labelSelect = label.cloneNode(true);
+  labelSelect.textContent = 'Выберите город';
+
   container.appendChild(customSelect);
   container.appendChild(optionsContainer);
+  fragment.appendChild(labelSelect);
+  container.appendChild(fragment);
 
   // const isEnterKey = (evt) => evt.key === 'Enter';
 

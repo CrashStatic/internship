@@ -1,10 +1,10 @@
-import { initPhoneInput, phoneInput } from './init-phone';
+import { initPhoneInput } from './init-phone';
 const VALID_NAME = /^[А-ЯA-Z][А-Яа-яA-Za-z\s]*$/;
 const VALID_NUMBER = /[+][7][\d ()-]{12}/gu;
-const nameInput = document.getElementById('name');
+// const nameInput = document.getElementById('name');
 
-const form = document.querySelector('.form');
-const inputs = form.querySelectorAll('input');
+// const form = document.querySelector('.form');
+// const inputs = form.querySelectorAll('input');
 
 const chekedName = (input) => {
   const nameValue = input.value;
@@ -36,12 +36,12 @@ const chekedPhone = (input) => {
   }
 };
 
-const initForm = () => {
+const initForm = (form, inputs, name, phone) => {
   if (!form) {
     return;
   }
 
-  initPhoneInput(phoneInput);
+  initPhoneInput(phone);
 
   //Добавляем ошибки для невалидных полей
   inputs.forEach((input) => {
@@ -54,32 +54,33 @@ const initForm = () => {
     });
   });
 
+
   form.addEventListener('submit', (evt) => {
     evt.preventDefault();
 
-    phoneInput.addEventListener('input', () => {
-      phoneInput.classList.remove('form__input--error');
-      phoneInput.setCustomValidity('');
-      initPhoneInput(phoneInput);
-      onInputChange(phoneInput);
+    phone.addEventListener('input', () => {
+      phone.classList.remove('form__input--error');
+      phone.setCustomValidity('');
+      initPhoneInput(phone);
+      onInputChange(phone);
     });
 
-    nameInput.addEventListener('input', () => {
-      onInputChange(nameInput);
+    name.addEventListener('input', () => {
+      onInputChange(name);
     });
 
     // Проверяем, что номер пользователя верный
-    if (!chekedPhone(phoneInput)) {
-      phoneInput.classList.add('form__input--error');
+    if (!chekedPhone(phone)) {
+      phone.classList.add('form__input--error');
     } else {
-      phoneInput.classList.remove('form__input--error');
+      phone.classList.remove('form__input--error');
     }
 
     // Проверяем, что имя верно
-    if (!chekedName(nameInput)) {
-      nameInput.classList.add('form__input--error');
+    if (!chekedName(name)) {
+      name.classList.add('form__input--error');
     } else {
-      nameInput.classList.remove('form__input--error');
+      name.classList.remove('form__input--error');
     }
 
     function onInputChange (input) {
@@ -88,9 +89,9 @@ const initForm = () => {
         input.setCustomValidity('');
       } else {
         if (input.classList.contains('form__input--error')) {
-          if (nameInput) {
+          if (name) {
             chekedName(input);
-          } else if (phoneInput) {
+          } else if (phone) {
             chekedPhone(input);
           }
         }
@@ -98,7 +99,7 @@ const initForm = () => {
     }
 
     //Прописываем условия валидности формы
-    const validForm = !phoneInput.classList.contains('form__input--error') && !nameInput.classList.contains('form__input--error');
+    const validForm = !phone.classList.contains('form__input--error') && !name.classList.contains('form__input--error');
 
     // Если всё в порядке, отправляем форму
     if (validForm) {

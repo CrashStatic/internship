@@ -1,32 +1,35 @@
-.form__item label {
-  display: flex;
-  flex-direction: column-reverse;
-  gap: 8px;
+.form__item {
   margin-bottom: 15px;
 
   @media (min-width: $tablet-width) {
-    gap: 15px;
     margin-bottom: 23px;
   }
 
   @media (min-width: $desktop-width) {
-    gap: 14px;
     margin-bottom: 22px;
   }
+}
+
+.form__item label,
+.form__item--textarea {
+  display: flex;
+  flex-direction: column-reverse;
+  // gap: 8px;
+  // margin-bottom: 15px;
+
+  // @media (min-width: $tablet-width) {
+  //   gap: 15px;
+  //   margin-bottom: 23px;
+  // }
+
+  // @media (min-width: $desktop-width) {
+  //   gap: 14px;
+  //   margin-bottom: 22px;
+  // }
 
   &:focus,
   &:focus-visible {
     outline: none;
-  }
-
-  &:hover {
-    .form__label {
-      opacity: 1;
-    }
-
-    .form__input {
-      border: 1px solid $color-dark;
-    }
   }
 }
 
@@ -34,10 +37,24 @@
   font-size: 14px;
   line-height: 14px;
   opacity: 0.8;
+  margin-bottom: 8px;
 
+  &:hover,
   &:focus-visible {
     opacity: 1;
   }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 15px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 14px;
+  }
+}
+
+.form__label--description {
+  margin-bottom: 0;
 }
 
 .form__input,
@@ -79,10 +96,6 @@
       opacity: 0.6;
     }
   }
-}
-
-.form__custom-select:hover .form__label--place {
-  opacity: 1;
 }
 
 .form__checkbox {
@@ -197,10 +210,6 @@
   }
 }
 
-// .form__input--error-checkbox {
-//   background-color: hsla(357, 100%, 68%, 0.2);
-// }
-
 .form__button {
   position: relative;
 
@@ -222,8 +231,10 @@
 }
 
 .form__custom-select {
-  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
   margin-bottom: 15px;
+  position: relative;
 
   &::after {
     content: "";
@@ -279,12 +290,12 @@
 .form__select-items {
   position: absolute;
   background-color: $color-white;
-  z-index: 99;
+  z-index: 3;
   display: none;
   width: 100%;
   border: 1px solid $color-dark;
   border-radius: 8px;
-  margin-top: 4px;
+  bottom: -197px;
 }
 
 .form__select-items--opened {
