@@ -20,7 +20,6 @@
     </svg> -->
     <!-- примеры требуемых атрибутов data-test="*" -->
 
-    <!-- <div data-test="form">form</div> -->
     <!-- <div data-test="footer">footer</div> -->
 
     <main class="page-main">
@@ -33,7 +32,7 @@
           <div class="header__logo">
             <img src="img/logo.svg" alt="Логотип сайта Internship" width="52" height="52">
           </div>
-          <nav class="header__nav nav">
+          <nav class="header__nav nav" aria-label="Главное меню">
             <button class="nav__button" type="button" aria-label="Открыть меню навигации">Меню</button>
             <ul class="nav__list">
               <li class="nav__item">
@@ -713,7 +712,59 @@
 
     </main>
 
-    <footer class="page-footer" id="footer" data-test="footer">gdfg</footer>
+    <footer class="page-footer footer" id="footer" data-test="footer">
+      <div class="footer container">
+        <div class="footer__logo">
+          <img src="img/logo.svg" alt="Логотип сайта Internship" width="52" height="52">
+        </div>
+
+        <nav class="footer__nav" aria-label="Навигация в подвале">
+          <ul class="footer__list">
+            <li class="footer__item">
+              <a class="footer__link" href="#about">О проекте</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#programs">Программы</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#grant">Как поехать</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#reviews">Отзывы</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#news">Новости</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#contacts">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="footer__copyright">
+          <a class="footer__copyright-link" href="#">Политика конфиденциальности</a>
+          <p class="footer__copyright-info">Стажировка &copy;&nbsp;2023 Все права защищены</p>
+        </div>
+
+        <ul class="footer__social">
+          <li class="footer__social-item">
+            <a class="footer__social-link footer__social-link--vk" href="https://github.com/CrashStatic" target="_blank" rel="noreferrer noopener">
+              <span class="visually-hidden">Наша страница Вконтакте</span>
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a class="footer__social-link footer__social-link--ok" href="https://github.com/CrashStatic" target="_blank" rel="noreferrer noopener">
+              <span class="visually-hidden">Наша страница Одноклассники</span>
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a class="footer__social-link footer__social-link--reddit" href="https://github.com/CrashStatic" target="_blank" rel="noreferrer noopener">
+              <span class="visually-hidden">Наша страница Reddit</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
 
     <div class="modal">
       <div class="modal__wrapper">
