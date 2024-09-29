@@ -133,19 +133,6 @@
   display: flex;
   flex-direction: column-reverse;
 
-  // gap: 8px;
-  // margin-bottom: 15px;
-
-  // @media (min-width: $tablet-width) {
-  //   gap: 15px;
-  //   margin-bottom: 23px;
-  // }
-
-  // @media (min-width: $desktop-width) {
-  //   gap: 14px;
-  //   margin-bottom: 22px;
-  // }
-
   &:focus,
   &:focus-visible {
     outline: none;
@@ -198,12 +185,9 @@
 
 .form__input,
 .form__select {
-  // border: 1px solid hsla(0, 0%, 28%, 0.3);
   border-radius: 8px;
   font-size: 14px;
   line-height: 18px;
-
-  // color: $color-dark;
   appearance: unset;
   outline: none;
   background-color: transparent;
@@ -216,26 +200,6 @@
   &:focus-visible {
     outline: none;
   }
-
-  // &:hover,
-  // &:focus-visible,
-  // &:active {
-  //   border: 1px solid $color-dark;
-
-  //   ~ .form__label {
-  //     opacity: 1;
-  //   }
-  // }
-
-  // &:disabled {
-  //   border: 1px solid hsla(214, 9%, 69%, 0.5);
-  //   background-color: hsla(214, 9%, 69%, 0.2);
-  //   pointer-events: none;
-
-  //   ~ .form__label {
-  //     opacity: 0.6;
-  //   }
-  // }
 }
 
 .form__input--modal {
@@ -429,35 +393,6 @@
     }
   }
 }
-
-
-// .form__input .form__input--error {
-//   border: 1px solid $color-error;
-//   background-color: hsla(357, 100%, 68%, 0.2);
-
-//   .form__label {
-//     opacity: 1;
-//   }
-// }
-
-
-// .form--error .form__input:invalid {
-//   border: 1px solid #ff5e66;
-//   background-color: hsla(357, 100%, 68%, 0.2);
-
-//   .form__label {
-//     opacity: 1;
-//   }
-// }
-
-// .form__input:invalid {
-//   border: 1px solid #ff5e66;
-//   background-color: hsla(357, 100%, 68%, 0.2);
-
-//   .form__label {
-//     opacity: 1;
-//   }
-// }
 
 .form__input--error {
   border: 1px solid #ff5e66;
