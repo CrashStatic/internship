@@ -1,8 +1,6 @@
 import Swiper from 'swiper';
-// import 'swiper/css';
 import 'swiper/css';
 import { Grid, Pagination } from 'swiper/modules';
-// import 'swiper/css/pagination';
 import { renderSlider } from '../util';
 
 const ADDITIONAL_PAGES = 3;
@@ -11,8 +9,6 @@ const sliderElement = document.querySelector('.news__wrapper');
 const slides = document.querySelectorAll('.news__slide');
 const newsTabs = document.querySelectorAll('.news__tab');
 const newsPagination = document.querySelector('.news__pagination');
-
-// const newsWrapper = document.querySelector('.news__wrapper');
 
 const initSwiperNews = () => {
   if (window.innerWidth < 1439) {
@@ -28,14 +24,7 @@ const initSwiperNews = () => {
   const newsSwiper = () => new Swiper('.news__swiper', {
     modules: [Grid, Pagination],
 
-    // slidesPerView: 'auto',
-    // slidesPerGroup: 1,
-    // spaceBetween: 20,
     loop: false,
-
-    // grid: {
-    //   rows: 2,
-    // },
 
     grid: {
       rows: 2,
@@ -49,7 +38,6 @@ const initSwiperNews = () => {
     },
 
     pagination: {
-      // el: '.news__pagination-inner',
       el: '.news__pagination',
       dynamicBullets: true,
       dynamicMainBullets: 3,
@@ -70,9 +58,7 @@ const initSwiperNews = () => {
     breakpoints: {
       320: {
         slidesPerView: 'auto',
-        // slidesPerGroup: 1,
         spaceBetween: 20,
-        // slidesPerView: 1,
         allowTouchMove: true,
         grid: {
           rows: 2,
@@ -96,8 +82,8 @@ const initSwiperNews = () => {
       1440: {
         spaceBetween: 32,
         allowTouchMove: false,
-        // slidesPerGroup: 3,
-        // slidesPerView: 3,
+        slidesPerGroup: 3,
+        slidesPerView: 'auto',
         grid: {
           rows: 1,
           fill: 'row'
@@ -122,13 +108,6 @@ const initSwiperNews = () => {
       });
 
       currentTab.classList.add('news__tab--active');
-
-      // if (currentTab.hasAttribute('all')) {
-      //   slider.update();
-      // } else {
-      //   newsWrapper.innerHTML = '';
-      // }
-
     });
   });
 
@@ -155,7 +134,11 @@ const initSwiperNews = () => {
   }
 
   function onSlideChange () {
-    const currentSlideIndex = newsSlider.realIndex;
+    let currentSlideIndex = newsSlider.realIndex;
+
+    if (window.innerWidth > 1439) {
+      currentSlideIndex = Math.ceil(currentSlideIndex / 3);
+    }
 
     if (currentSlideIndex === firstButton && currentSlideIndex !== 0) {
       firstButton--;
