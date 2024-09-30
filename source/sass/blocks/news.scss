@@ -458,8 +458,6 @@
   width: 152px;
   gap: 16px;
   justify-content: center;
-
-  // position: absolute;
   transform: none;
 
   --swiper-pagination-bottom: 0;
@@ -467,8 +465,8 @@
 
 .news__pagination-button {
   display: flex;
-  width: 26px;
-  height: 26px;
+  min-width: 26px;
+  min-height: 26px;
   font-size: 14px;
   line-height: 14px;
   font-weight: 400;
@@ -483,8 +481,8 @@
   cursor: pointer;
 
   @media (min-width: $tablet-width) {
-    width: 32px;
-    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
     font-size: 16px;
     line-height: 20px;
   }
