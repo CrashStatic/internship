@@ -1,10 +1,6 @@
 import { initPhoneInput } from './init-phone';
 const VALID_NAME = /^[А-ЯA-Z][А-Яа-яA-Za-z\s]*$/;
 const VALID_NUMBER = /[+][7][\d ()-]{12}/gu;
-// const nameInput = document.getElementById('name');
-
-// const form = document.querySelector('.form');
-// const inputs = form.querySelectorAll('input');
 
 const chekedName = (input) => {
   const nameValue = input.value;
@@ -40,8 +36,6 @@ const initForm = (form, inputs, name, phone) => {
   if (!form) {
     return;
   }
-
-  initPhoneInput(phone);
 
   //Добавляем ошибки для невалидных полей
   inputs.forEach((input) => {

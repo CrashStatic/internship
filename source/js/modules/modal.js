@@ -1,5 +1,6 @@
 import { setCustomSelect } from './form/custom-select';
 import { initForm } from './form/validate-form';
+import { initPhoneInput } from './form/init-phone';
 
 const SETINPUTCLASS = 'form__input form__input--modal form__input--place';
 const LABELCLASS = 'form__label--modal';
@@ -20,6 +21,9 @@ const initModal = () => {
   if (!modal) {
     return;
   }
+
+  // Добавляем маску телефона
+  initPhoneInput(phoneInput);
 
   modalOpenBtn.addEventListener('click', () => {
     modal.classList.add('modal--opened');

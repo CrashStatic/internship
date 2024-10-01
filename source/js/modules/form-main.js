@@ -1,5 +1,6 @@
 import { setCustomSelect } from './form/custom-select';
 import { initForm } from './form/validate-form';
+import { initPhoneInput } from './form/init-phone';
 
 const SETINPUTCLASS = 'form__input form__input--main form__input--place-main';
 const LABELCLASS = 'form__label--main';
@@ -12,6 +13,13 @@ const phoneInput = form.querySelector('.form__input--phone');
 const messageArea = form.querySelector('.form__input--message');
 
 const initMainForm = () => {
+  if (!form) {
+    return;
+  }
+
+  // Добавляем маску телефона
+  initPhoneInput(phoneInput);
+
   //Добавляем ошибки для невалидного поля ввода сообщения
   messageArea.addEventListener('invalid', () => {
     messageArea.classList.add('form__input--error');
