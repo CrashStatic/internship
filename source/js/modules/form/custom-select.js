@@ -30,7 +30,6 @@ const setCustomSelect = (inputClass, labelClass, container) => {
 
     optionDiv.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
-
         selectElement.selectedIndex = i; // Установка выбранного индекса
         customSelect.innerHTML = e.target.innerHTML;
         customSelect.value = e.target.innerHTML;

@@ -90,19 +90,6 @@
       right: -20px;
     }
   }
-
-  // @media (min-width: $desktop-width) {
-  //   display: flex;
-  //   width: 100%;
-  //   max-width: 400px;
-  //   flex-wrap: wrap;
-  //   gap: 20px;
-  //   justify-content: end;
-  //   position: unset;
-
-  //   --swiper-pagination-bottom: 0;
-  //   --swiper-pagination-bullet-horizontal-gap: 0;
-  // }
 }
 
 .hero__pagination-bullet {
@@ -144,83 +131,7 @@
     width: 12px;
     height: 12px;
   }
-
-  // @include hover {
-  //   border-color: $color-primary-darker;
-  //   outline: none;
-
-  //   &:active {
-  //     background-color: $color-primary;
-  //     outline: none;
-  //   }
-  // }
-
-  // &:active {
-  //   background-color: $color-primary;
-  //   outline: none;
-  // }
-
-  // &:focus,
-  // &:focus-visible {
-  //   border-color: $color-primary-darker;
-  // }
 }
-
-
-// .hero .swiper-pagination {
-//   position: initial;
-//   background-color: $color-white;
-//   display: flex;
-//   gap: 12px;
-//   justify-content: center;
-//   align-items: center;
-//   width: 94px;
-//   height: 38px;
-//   border-radius: 20px 20px 0 0;
-
-//   &::after {
-//     position: absolute;
-//     content: "";
-//     width: 20px;
-//     height: 20px;
-//     right: -20px;
-//     bottom: 0;
-//     background-image: url("../img/hero-block/back/angle-sm.png");
-//     background-repeat: no-repeat;
-//   }
-
-//   // @include vp-767 {
-//   //   border-radius: 12px 12px 0 0;
-//   //   width: 80px;
-//   //   height: 28px;
-
-//   //   &::after {
-//   //     height: 10px;
-//   //     right: -10px;
-//   //     width: 10px;
-//   //     background-image: url("../img/hero-block/back/angle-sm-mb.png");
-//   //   }
-//   // }
-// }
-
-// .hero .swiper-pagination-bullet {
-//   margin: 0;
-//   width: 10px;
-//   height: 10px;
-//   border: 1px $color-additional solid;
-//   border-radius: 50%;
-//   background-color: transparent;
-//   opacity: 1;
-
-//   // @include vp-767 {
-//   //   width: 8px;
-//   //   height: 8px;
-//   // }
-// }
-
-// .hero .swiper-pagination-bullet-active {
-//   background-color: $color-additional;
-// }
 
 .hero__title {
   font-size: 22px;

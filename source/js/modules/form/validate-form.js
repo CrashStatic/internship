@@ -48,7 +48,6 @@ const initForm = (form, inputs, name, phone) => {
     });
   });
 
-
   form.addEventListener('submit', (evt) => {
     evt.preventDefault();
 

@@ -1,4 +1,4 @@
-import Swiper from 'swiper';
+import Swiper from 'swiper/bundle';
 import 'swiper/css';
 import { Grid, Pagination } from 'swiper/modules';
 import { renderSlider } from '../util';
@@ -16,7 +16,7 @@ const initSwiperNews = () => {
       renderSlider(sliderElement, slides);
     }
   } else {
-    for (let i = 1; i <= ADDITIONAL_PAGES; i++) {
+    for (let i = 1; i < ADDITIONAL_PAGES; i++) {
       renderSlider(sliderElement, slides);
     }
   }
@@ -52,7 +52,6 @@ const initSwiperNews = () => {
         onSlideChange();
       },
     },
-
 
     // Responsive breakpoints
     breakpoints: {

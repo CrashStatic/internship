@@ -65,10 +65,15 @@
   }
 }
 
+.footer__item {
+  text-align: center;
+}
+
 .footer__link {
   color: $color-dark;
   text-decoration: none;
   cursor: pointer;
+  text-align: center;
   transition: color $trans-default, opacity $trans-default;
 
   &:hover {
