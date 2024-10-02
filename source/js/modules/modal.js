@@ -16,7 +16,7 @@ const inputs = form.querySelectorAll('input');
 const nameInput = form.querySelector('.form__input--name');
 const phoneInput = form.querySelector('.form__input--phone');
 const selectElement = form.querySelector('.form__select--modal');
-const inputSelect = form.querySelector('.form__input--place-modal');
+const selectInput = form.querySelector('.form__input--place-modal');
 
 const initModal = () => {
   if (!modal) {
@@ -41,10 +41,13 @@ const initModal = () => {
     aboutSection.scrollIntoView();
     overlay.style.display = 'none';
     modalForm.reset();
+    inputs.forEach((input) => {
+      input.classList.remove('form__input--error');
+    });
   }
 
-  setCustomSelect(selectElement, LABELCLASS, selectContainer, inputSelect);
-  initForm(form, inputs, nameInput, phoneInput, inputSelect);
+  setCustomSelect(selectElement, LABELCLASS, selectContainer, selectInput);
+  initForm(form, inputs, nameInput, phoneInput, selectInput);
 };
 
 export { initModal };

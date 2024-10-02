@@ -11,7 +11,7 @@ const nameInput = form.querySelector('.form__input--name');
 const phoneInput = form.querySelector('.form__input--phone');
 const messageArea = form.querySelector('.form__input--message');
 const selectElement = form.querySelector('.form__select--main');
-const inputSelect = form.querySelector('.form__input--place-main');
+const selectInput = form.querySelector('.form__input--place-main');
 
 const initMainForm = () => {
   if (!form) {
@@ -30,8 +30,8 @@ const initMainForm = () => {
     messageArea.classList.remove('form__input--error');
   });
 
-  setCustomSelect(selectElement, LABELCLASS, selectContainer, inputSelect);
-  initForm(form, inputs, nameInput, phoneInput, inputSelect);
+  setCustomSelect(selectElement, LABELCLASS, selectContainer, selectInput);
+  initForm(form, inputs, nameInput, phoneInput, selectInput);
 };
 
 export { initMainForm };
