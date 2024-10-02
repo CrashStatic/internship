@@ -36,12 +36,14 @@ const setCustomSelect = (select, labelClass, container, customSelect) => {
   customSelect.addEventListener('click', (e) => {
     e.stopPropagation();
     optionsContainer.classList.toggle('form__select-items--opened');
+    customSelect.classList.remove('form__input--error');
   });
 
   customSelect.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
       optionsContainer.classList.toggle('form__select-items--opened');
+      customSelect.classList.remove('form__input--error');
     }
   });
 
