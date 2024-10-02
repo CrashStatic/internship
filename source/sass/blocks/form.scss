@@ -515,6 +515,7 @@
 .form__input--place-main,
 .form__input--place-modal {
   caret-color: transparent;
+  cursor: pointer;
 }
 
 .form__custom-select select {
@@ -554,13 +555,17 @@
   font-size: 14px;
   line-height: 18px;
   color: $color-dark;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-additional;
+  }
 
   &:focus,
   &:focus-visible {
     outline: none;
   }
 
-  &:hover,
   &:focus-visible,
   &:active {
     background-color: $color-additional;

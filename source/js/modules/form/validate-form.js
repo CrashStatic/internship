@@ -1,4 +1,5 @@
 import { initPhoneInput } from './init-phone';
+import { modalClosed } from '../modal';
 const VALID_NUMBER = /[+][7][\d ()-]{12}/gu;
 
 // Проверка телефона
@@ -77,6 +78,10 @@ const initForm = (form, inputs, name, phone, place) => {
     if (validForm) {
       form.submit();
       form.reset();
+
+      if (form.classList.contains('modal')) {
+        modalClosed();
+      }
     }
   });
 };

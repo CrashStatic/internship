@@ -18,6 +18,16 @@ const phoneInput = form.querySelector('.form__input--phone');
 const selectElement = form.querySelector('.form__select--modal');
 const selectInput = form.querySelector('.form__input--place-modal');
 
+const modalClosed = () => {
+  modal.classList.remove('modal--opened');
+  aboutSection.scrollIntoView();
+  overlay.style.display = 'none';
+  modalForm.reset();
+  inputs.forEach((input) => {
+    input.classList.remove('form__input--error');
+  });
+};
+
 const initModal = () => {
   if (!modal) {
     return;
@@ -36,18 +46,8 @@ const initModal = () => {
 
   overlay.addEventListener('click', modalClosed);
 
-  function modalClosed() {
-    modal.classList.remove('modal--opened');
-    aboutSection.scrollIntoView();
-    overlay.style.display = 'none';
-    modalForm.reset();
-    inputs.forEach((input) => {
-      input.classList.remove('form__input--error');
-    });
-  }
-
   setCustomSelect(selectElement, LABELCLASS, selectContainer, selectInput);
   initForm(form, inputs, nameInput, phoneInput, selectInput);
 };
 
-export { initModal };
+export { initModal, modalClosed };
