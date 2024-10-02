@@ -1,37 +1,41 @@
-const selectElement = document.getElementById('place');
+// const selectElement = document.getElementById('place');
 const fragment = document.createDocumentFragment();
 const label = document.querySelector('.form__label');
 
-const setCustomSelect = (inputClass, labelClass, container) => {
+const setCustomSelect = (select, inputClass, labelClass, container) => {
   const customSelect = document.createElement('input');
   customSelect.setAttribute('class', `${inputClass}`);
   customSelect.setAttribute('tabindex', '0');
   customSelect.setAttribute('readonly', 'true');
 
+  customSelect.setAttribute('value', ' ');
+
   customSelect.setAttribute('required', 'true');
 
-  customSelect.innerHTML = selectElement.options[selectElement.selectedIndex].innerHTML;
+  customSelect.innerHTML = select.options[select.selectedIndex].innerHTML;
 
   const optionsContainer = document.createElement('div');
   optionsContainer.setAttribute('class', 'form__select-items');
   optionsContainer.setAttribute('required', 'true');
 
-  for (let i = 0; i < selectElement.length; i++) {
+  for (let i = 0; i < select.length; i++) {
     const optionDiv = document.createElement('div');
 
     optionDiv.setAttribute('tabindex', '0');
-    optionDiv.innerHTML = selectElement.options[i].innerHTML;
+    optionDiv.innerHTML = select.options[i].innerHTML;
     optionDiv.addEventListener('click', function () {
-      selectElement.selectedIndex = i;
+      select.selectedIndex = i;
       customSelect.innerHTML = this.innerHTML;
+      customSelect.setAttribute('value', `${this.innerHTML}`);
       customSelect.value = this.innerHTML;
       closeAllSelect();
     });
 
     optionDiv.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
-        selectElement.selectedIndex = i; // Установка выбранного индекса
+        select.selectedIndex = i; // Установка выбранного индекса
         customSelect.innerHTML = e.target.innerHTML;
+        customSelect.setAttribute('value', `${this.innerHTML}`);
         customSelect.value = e.target.innerHTML;
         closeAllSelect();
       }

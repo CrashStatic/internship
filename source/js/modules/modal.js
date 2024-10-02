@@ -16,6 +16,7 @@ const form = document.querySelector('.modal__form');
 const inputs = form.querySelectorAll('input');
 const nameInput = form.querySelector('.form__input--name');
 const phoneInput = form.querySelector('.form__input--phone');
+const selectElement = document.getElementById('place-modal');
 
 const initModal = () => {
   if (!modal) {
@@ -42,7 +43,7 @@ const initModal = () => {
     modalForm.reset();
   }
 
-  setCustomSelect(SETINPUTCLASS, LABELCLASS, selectContainer);
+  setCustomSelect(selectElement, SETINPUTCLASS, LABELCLASS, selectContainer);
   initForm(form, inputs, nameInput, phoneInput);
 };
 

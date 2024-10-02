@@ -2,6 +2,7 @@ import { initPhoneInput } from './init-phone';
 const VALID_NAME = /^[А-ЯA-Z][А-Яа-яA-Za-z\s]*$/;
 const VALID_NUMBER = /[+][7][\d ()-]{12}/gu;
 
+// Проверка имени
 const chekedName = (input) => {
   const nameValue = input.value;
 
@@ -17,6 +18,7 @@ const chekedName = (input) => {
   }
 };
 
+// Проверка телефона
 const chekedPhone = (input) => {
   const phoneValue = input.value;
 
@@ -31,6 +33,17 @@ const chekedPhone = (input) => {
     return true;
   }
 };
+
+// // Проверка выпадающего списка
+// const chekedSelect = (input) => {
+//   if (input.value.trim() === '') {
+//     input.classList.add('form__input--error');
+//     return false;
+//   } else {
+//     input.classList.remove('form__input--error');
+//     return true;
+//   }
+// };
 
 const initForm = (form, inputs, name, phone) => {
   if (!form) {
@@ -76,6 +89,12 @@ const initForm = (form, inputs, name, phone) => {
       name.classList.remove('form__input--error');
     }
 
+    // if(!chekedSelect(place)) {
+    //   place.classList.add('form__input--error');
+    // } else {
+    //   place.classList.remove('form__input--error');
+    // }
+
     function onInputChange (input) {
       if (input.value.trim() === '') {
         input.classList.remove('form__input--error');
@@ -93,6 +112,7 @@ const initForm = (form, inputs, name, phone) => {
 
     //Прописываем условия валидности формы
     const validForm = !phone.classList.contains('form__input--error') && !name.classList.contains('form__input--error');
+    // && !place.classList.contains('form__input--error')
 
     // Если всё в порядке, отправляем форму
     if (validForm) {
