@@ -2,21 +2,22 @@
 const fragment = document.createDocumentFragment();
 const label = document.querySelector('.form__label');
 
-const setCustomSelect = (select, inputClass, labelClass, container) => {
-  const customSelect = document.createElement('input');
-  customSelect.setAttribute('class', `${inputClass}`);
-  customSelect.setAttribute('tabindex', '0');
-  customSelect.setAttribute('readonly', 'true');
+const setCustomSelect = (select, labelClass, container, customSelect) => {
+  // const customSelect = document.createElement('input');
+  // customSelect.setAttribute('class', `${inputClass}`);
+  // customSelect.setAttribute('class', `${inputClass}`);
+  // customSelect.setAttribute('tabindex', '0');
+  // customSelect.setAttribute('readonly', 'true');
 
-  customSelect.setAttribute('value', ' ');
+  // customSelect.setAttribute('value', ' ');
 
-  customSelect.setAttribute('required', 'true');
+  // customSelect.setAttribute('required', 'true');
 
-  customSelect.innerHTML = select.options[select.selectedIndex].innerHTML;
+  // customSelect.innerHTML = select.options[select.selectedIndex].innerHTML;
 
   const optionsContainer = document.createElement('div');
   optionsContainer.setAttribute('class', 'form__select-items');
-  optionsContainer.setAttribute('required', 'true');
+  // optionsContainer.setAttribute('required', 'true');
 
   for (let i = 0; i < select.length; i++) {
     const optionDiv = document.createElement('div');
@@ -26,7 +27,7 @@ const setCustomSelect = (select, inputClass, labelClass, container) => {
     optionDiv.addEventListener('click', function () {
       select.selectedIndex = i;
       customSelect.innerHTML = this.innerHTML;
-      customSelect.setAttribute('value', `${this.innerHTML}`);
+      // customSelect.setAttribute('value', `${this.innerHTML}`);
       customSelect.value = this.innerHTML;
       closeAllSelect();
     });
@@ -35,7 +36,7 @@ const setCustomSelect = (select, inputClass, labelClass, container) => {
       if (e.key === 'Enter') {
         select.selectedIndex = i; // Установка выбранного индекса
         customSelect.innerHTML = e.target.innerHTML;
-        customSelect.setAttribute('value', `${this.innerHTML}`);
+        // customSelect.setAttribute('value', `${this.innerHTML}`);
         customSelect.value = e.target.innerHTML;
         closeAllSelect();
       }

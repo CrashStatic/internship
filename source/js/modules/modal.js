@@ -2,7 +2,7 @@ import { setCustomSelect } from './form/custom-select';
 import { initForm } from './form/validate-form';
 import { initPhoneInput } from './form/init-phone';
 
-const SETINPUTCLASS = 'form__input form__input--modal form__input--place';
+// const SETINPUTCLASS = 'form__input form__input--modal form__input--place';
 const LABELCLASS = 'form__label--modal';
 
 const modal = document.querySelector('.modal');
@@ -16,7 +16,8 @@ const form = document.querySelector('.modal__form');
 const inputs = form.querySelectorAll('input');
 const nameInput = form.querySelector('.form__input--name');
 const phoneInput = form.querySelector('.form__input--phone');
-const selectElement = document.getElementById('place-modal');
+const selectElement = form.querySelector('.form__select--modal');
+const inputSelect = form.querySelector('.form__input--place-modal');
 
 const initModal = () => {
   if (!modal) {
@@ -43,8 +44,8 @@ const initModal = () => {
     modalForm.reset();
   }
 
-  setCustomSelect(selectElement, SETINPUTCLASS, LABELCLASS, selectContainer);
-  initForm(form, inputs, nameInput, phoneInput);
+  setCustomSelect(selectElement, LABELCLASS, selectContainer, inputSelect);
+  initForm(form, inputs, nameInput, phoneInput, inputSelect);
 };
 
 export { initModal };

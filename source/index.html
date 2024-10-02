@@ -687,7 +687,7 @@
                 <label class="form__label form__label--main" for="message">Ваше сообщение</label>
               </div>
               <div class="form__item form__custom-select form__custom-select--main">
-                <select class="form__select" id="place" name="place" size="1">
+                <select class="form__select form__select--main" id="place-hiden" name="place" size="1">
                   <option value="">&nbsp;</option>
                   <option value="st-petersburg">Санкт-Петербург</option>
                   <option value="moscow">Москва</option>
@@ -695,6 +695,7 @@
                   <option value="ekaterinburg">Екатеринбург</option>
                 </select>
                 <label class="visually-hidden" for="place">Выберите город</label>
+                <input class="form__input form__input--main form__input--place-main" value="" type="text" name="place" id="place" required>
               </div>
               <div class="form__checkbox form__checkbox--main">
                 <input class="form__checkbox-input form__input form__checkbox-input--main" type="checkbox" name="agree" id="agree" required>
@@ -784,7 +785,7 @@
               </label>
             </div>
             <div class="form__item form__custom-select form__custom-select--modal">
-              <select class="form__select" id="place-modal" name="place" size="1">
+              <select class="form__select form__select--modal" id="place-modal-hiden" name="place-modal" size="1">
                 <option value="">&nbsp;</option>
                 <option value="st-petersburg">Санкт-Петербург</option>
                 <option value="moscow">Москва</option>
@@ -792,6 +793,7 @@
                 <option value="ekaterinburg">Екатеринбург</option>
               </select>
               <label class="visually-hidden" for="place-modal">Выберите город</label>
+              <input class="form__input form__input--modal form__input--place form__input--place-modal" type="text" value="" name="place-modal" id="place-modal" required>
             </div>
             <div class="form__checkbox">
               <input class="form__checkbox-input form__input form__checkbox-input--modal" type="checkbox" name="agree" id="agree-modal" required>
