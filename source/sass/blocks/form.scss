@@ -512,6 +512,11 @@
   }
 }
 
+.form__input--place-main,
+.form__input--place-modal {
+  caret-color: transparent;
+}
+
 .form__custom-select select {
   display: none;
 }

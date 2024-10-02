@@ -2,7 +2,6 @@ import { setCustomSelect } from './form/custom-select';
 import { initForm } from './form/validate-form';
 import { initPhoneInput } from './form/init-phone';
 
-// const SETINPUTCLASS = 'form__input form__input--main form__input--place-main';
 const LABELCLASS = 'form__label--main';
 
 const selectContainer = document.querySelector('.form__custom-select--main');
