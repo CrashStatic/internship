@@ -449,6 +449,14 @@
     line-height: 20px;
   }
 
+  @media (max-width: $mobile-width) {
+    &:hover,
+    &:focus-visible,
+    &:active {
+      width: 26px;
+    }
+  }
+
   &:hover {
     opacity: 1;
     border: 2px solid $color-additional;

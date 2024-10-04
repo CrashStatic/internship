@@ -3,7 +3,7 @@ import 'swiper/css';
 import { Grid, Pagination } from 'swiper/modules';
 import { renderSlider } from '../util';
 
-const ADDITIONAL_PAGES = 3;
+const ADDITIONAL_PAGES = 5;
 const SHOWNBUTTONS = 4;
 const sliderElement = document.querySelector('.news__wrapper');
 const slides = document.querySelectorAll('.news__slide');
@@ -131,6 +131,10 @@ const initSwiperNews = () => {
 
     if (window.innerWidth > 1439) {
       currentSlideIndex = Math.ceil(currentSlideIndex / 3);
+    }
+
+    if (window.innerWidth > 767 && window.innerWidth < 1440) {
+      currentSlideIndex = Math.ceil(currentSlideIndex / 2);
     }
 
     if (currentSlideIndex === firstButton && currentSlideIndex !== 0) {
