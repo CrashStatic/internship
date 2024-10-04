@@ -11,14 +11,8 @@ const newsTabs = document.querySelectorAll('.news__tab');
 const newsPagination = document.querySelector('.news__pagination');
 
 const initSwiperNews = () => {
-  if (window.innerWidth < 1439) {
-    for (let i = 0; i < ADDITIONAL_PAGES; i++) {
-      renderSlider(sliderElement, slides);
-    }
-  } else {
-    for (let i = 1; i < ADDITIONAL_PAGES; i++) {
-      renderSlider(sliderElement, slides);
-    }
+  for (let i = 0; i < ADDITIONAL_PAGES; i++) {
+    renderSlider(sliderElement, slides);
   }
 
   const newsSwiper = () => new Swiper('.news__swiper', {

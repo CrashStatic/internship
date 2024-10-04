@@ -7,9 +7,7 @@ const sliderElement = document.querySelector('.reviews__wrapper');
 const slides = document.querySelectorAll('.reviews__slide');
 
 const initSwiperReviews = () => {
-  if (window.innerWidth > 1439) {
-    renderSlider(sliderElement, slides);
-  }
+  renderSlider(sliderElement, slides);
 
   new Swiper('.reviews__swiper', {
 

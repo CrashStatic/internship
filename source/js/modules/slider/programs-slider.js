@@ -7,9 +7,8 @@ const sliderElement = document.querySelector('.programs__wrapper');
 const slides = document.querySelectorAll('.programs__slide');
 
 const initSwiperPrograms = () => {
-  if (window.innerWidth > 1439) {
-    renderSlider(sliderElement, slides);
-  }
+  const sliceSliders = Array.from(slides).splice(2);
+  renderSlider(sliderElement, sliceSliders);
 
   new Swiper('.programs__swiper', {
 
