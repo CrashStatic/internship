@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "homepage": "https://crashstatic.github.io/inernship/",
+  "homepage": "https://crashstatic.github.io/internship/",
   "scripts": {
     "dev": "vite --host --open",
     "test": "backstop test --config=pp.config.cjs",
