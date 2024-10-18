@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
+  "homepage": "https://crashstatic.github.io/inernship/",
   "scripts": {
     "dev": "vite --host --open",
     "test": "backstop test --config=pp.config.cjs",
@@ -17,7 +18,8 @@
     "stylelint": "stylelint \"source/sass/**/*.scss\" --fix",
     "lint-js": "eslint source/js --fix",
     "ls-lint": "ls-lint",
-    "editorconfig": "editorconfig-cli"
+    "editorconfig": "editorconfig-cli",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "3.0.0",
